@@ -1,0 +1,61 @@
+header {
+  position: fixed;
+  width: 100%;
+  border-bottom: 1px;
+  border-bottom-style: solid;
+  height: 80px;
+  left: 0;
+}
+
+.menuIcon {
+  left: 20px;
+  position: absolute;
+  top: 15px;
+}
+
+.menuIcon > img {
+  width: 40%;
+}
+
+.cartIcon {
+  right: 30px;
+  top: 10px;
+  position: absolute;
+}
+
+.cartIcon > img {
+  width: 35%;
+  float: right;
+}
+
+.companyName {
+  position: absolute;
+  left: 37.42%;
+  right: 32.53%;
+  top: 1px;
+  font-family: Futura;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 48px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #362921;
+}
+
+/* Full page background: 
+ * https://www.w3schools.com/howto/howto_css_full_page.asp 
+ */
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.bg {
+  background-image: url("images/background.png");
+  height: 100%; 
+  background-repeat: no-repeat;
+  background-size: cover;
+}
