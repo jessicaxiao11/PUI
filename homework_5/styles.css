@@ -94,7 +94,7 @@ body, html {
   font-family: Montserrat;
   /* font-style: normal; */
   font-weight: 200;
-  font-size: 24px;
+  font-size: 20px;
 }
 
 .menu a:hover, .menu a:focus {
@@ -112,4 +112,38 @@ body, html {
   border-top: 1px solid #FFFFFF;
   padding-bottom: 50px;
   transition: 0.5s;
+}
+
+#quizIntro {
+  display: block;
+  position: fixed;
+  top: 55%;
+  left: 38%;
+  width: 23%;
+  border: 3px solid #FFFFFF;
+  height: 5%;
+  background: #C4C4C466;
+}
+
+#quizArrow > img {
+  width: 13%;
+  float: right;
+}
+
+#quizArrow {
+  right: 10%;
+  top: 25%;
+  position: absolute;
+}
+
+#quizIntro > p {
+  position: absolute;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  color: #FFFFFF;
+  left: 5%;
+  margin: 0;
+  top: 20%;
 }
