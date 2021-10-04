@@ -14,14 +14,14 @@
 
     <title>Muddy Paws</title>
     <link rel="stylesheet" href="styles.css" />
-    <link href='https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600' rel='stylesheet'>
 		<link rel="icon" href="images/pawIcon.png">
   </head>
   <body>
     <!-- top header -->
     <header>
       <a onmouseover="showMenu()" class="menuIcon"><img src="images/menuIcon.png"></a>
-      <a class="companyName" href="index.html">PRODUCT DETAIL</a>
+      <a class="companyName" href="index.html">MUDDY PAWS</a>
       <a class="cartIcon"><img src="images/cartIcon.png"></a> 
     </header>
 
@@ -41,5 +41,86 @@
       </div>
     </div>
 
+    <!-- product images -->
+    <img id="mainProductImg" src="images/furdinandBackpack1.png">
+    <div id="imgRow">
+      <a><img src="images/furdinandBackpack1.png"></a>
+      <a><img src="images/furdinandBackpack2.png"></a>
+      <a><img src="images/furdinandBackpack3.png"></a>
+      <a><img src="images/furdinandBackpack4.png"></a>
+    </div>
+
+    <!-- product info with size/color selection -->
+    <p id="productName">Furdinand Backpack</p>
+    <p id="productPrice">$95</p>
+    <p id="productDescription">Ready to take your dog on adventures? This backpack will be the perfect way to let them safely explore the outdoors!</p>
+    <p id="productSize">Size:</p>
+    <div id="sizeSelection">
+      <div id="tiny" class="sizeOption">
+        <a><img src="images/pawIcon.png"></a>
+        <p>tiny</p>
+      </div>
+      <div id="small" class="sizeOption">
+        <a><img src="images/pawIcon.png"></a>
+        <p>small</p>
+      </div>
+      <div id="medium" class="sizeOption">
+        <a><img src="images/pawIcon.png"></a>
+        <p>medium</p>
+      </div>
+      <div id="large" class="sizeOption">
+        <a><img src="images/pawIcon.png"></a>
+        <p>large</p>
+      </div>
+    </div>
+    <p id="productColor">Color:</p>
+    <div id="colorSelection">
+      <div id="strawberry" class="colorOption">
+        <div id="strawberryCircle"></div>
+        <p>strawberry</p>
+      </div>
+      <div id="blackberry" class="colorOption">
+        <div id="blackberryCircle"></div>
+        <p>blackberry</p>
+      </div>
+      <div id="crazyberry" class="colorOption">
+        <div id="crazyberryCircle"></div>
+        <p>crazyberry</p>
+      </div>
+      <div id="fireorange" class="colorOption">
+        <div id="fireorangeCircle"></div>
+        <p>fire orange</p>
+      </div>
+    </div>
+    <div id="quantity">
+      <a><img src="images/minusIcon.png"></a>
+      <p>1</p>
+      <a><img src="images/plusIcon.png"></a>
+    </div>
+    <div id="addToCart">
+      <p>Add to Cart</p>
+    </div>
+
+    <!--Item Details-->
+    <p id="detailsHeader">Item Details</p>
+    <p id="detailsDescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sodales, lorem eget fermentum efficitur, orci tellus tempor orci, sit amet lobortis dui nulla id metus.</p>
+    <ul id="detailsList">
+      <li>Ut dapibus bibendum lacus eget</li>
+      <li>Mauris euismod luctus laoreet. </li>
+      <li>Mauris dignissim dolor sed </li>
+      <li>cursus eleifend</li>
+    </ul>
+
+    <!--Customer Reviews-->
+    <div id="customerReviews">
+      <p id="reviewsHeader">Customer Reviews</p>
+      <img id="ratings" src="images/ratings.png">
+      <div id="review">
+        <p id="reviewCustomerName">Athena said:</p>
+        <p id="reviewContent">My dog Buddy LOVES this backpack! We have taken him see Oregon and Colorado is in the works :)</p>
+        <img id="reviewPhoto" src="images/reviewPhoto.png">
+      </div>
+      <p id="moreReviews">read more reviews</p>
+    </div>
   </body>
 </html>

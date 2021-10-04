@@ -314,3 +314,314 @@ body, html {
   font-size: 20px;
   margin: 0;
 }
+
+#mainProductImg {
+  position: absolute;
+  width: 40%;
+  left: 10%;
+  top: 20%;
+}
+
+#imgRow {
+  position: absolute;
+  left: 10%;
+  top: 73%;
+  width: 40%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  height: 10%;
+}
+
+#imgRow > a {
+  width: 15%;
+  /* height: 40%; */
+  overflow: hidden;
+  margin: 1%;
+}
+
+#imgRow > a > img {
+  width: 100%;
+}
+
+#productName {
+  position: absolute;
+  left: 55%;
+  top: 17%;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+}
+
+#productPrice {
+  position: absolute;
+  left: 90%;
+  top: 17%;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+}
+
+#productDescription {
+  position: absolute;
+  left: 55%;
+  top: 25%;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  width: 39%;
+}
+
+#productSize {
+  position: absolute;
+  left: 55%;
+  top: 40%;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+#sizeSelection{
+  position: absolute;
+  left: 63%;
+  top: 40%;
+  width: 30%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 10%;
+}
+
+#tiny > a > img {
+  height: 50%;
+  bottom: 0%;
+  position: relative;
+}
+
+#tiny > p {
+  bottom: 0%;
+  position: relative;
+}
+
+#small > a > img {
+  height: 65%;
+  bottom: 10%;
+  position: relative;
+}
+
+#small > p {
+  bottom: 15%;
+  position: relative;
+}
+
+#medium > a > img {
+  height: 80%;
+  bottom: 20%;
+  position: relative;
+}
+
+#medium > p {
+  bottom: 30%;
+  position: relative;
+}
+
+#large > a > img {
+  height: 95%;
+  bottom: 30%;
+  position: relative;
+}
+
+#large > p {
+  bottom: 45%;
+  position: relative;
+}
+
+.sizeOption > p {
+  margin: 0;
+  text-align: center;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+}
+
+#productColor {
+  position: absolute;
+  left: 55%;
+  top: 55%;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+#colorSelection{
+  position: absolute;
+  left: 63%;
+  top: 55%;
+  width: 30%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 10%;
+}
+
+.colorOption > p {
+  margin: 0;
+  text-align: center;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+}
+
+.colorOption > div {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  margin-left: 25%;
+}
+
+#strawberryCircle {
+  background-color: #ff295c;
+}
+
+#blackberryCircle {
+  background-color: #3A0958;
+}
+
+#crazyberryCircle {
+  background-color: #e529ff;
+}
+
+#fireorangeCircle {
+  background-color: #ff9207;
+}
+
+#quantity {
+  border: 1px solid black;
+  left: 60%;
+  top: 67%;
+  height: 5%;
+  position: absolute;
+  width: 8%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#quantity > a {
+  margin: 7%;
+}
+
+#quantity > p {
+  margin: 5px 0px 0px 0px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+}
+
+#addToCart {
+  left: 70%;
+  top: 67%;
+  height: 5%;
+  position: absolute;
+  width: 18%;
+  background-color: black;
+}
+
+#addToCart > p {
+  margin: 5px 0px 0px 0px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 24px;
+  color: #FFFFFF;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+#detailsHeader {
+  position: absolute;
+  left: 10%;
+  top: 85%;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+#detailsDescription {
+  position: absolute;
+  left: 10%;
+  top: 90%;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 18px;
+  width: 42%;
+}
+
+#detailsList {
+  position: absolute;
+  left: 11%;
+  top: 100%;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 18px;
+  width: 42%;
+  padding-bottom: 8%;
+}
+
+#customerReviews {
+  position: absolute;
+  left: 56%;
+  top: 87%;
+  height: 50%;
+  width: 40%;
+  border-left: 1px solid black;
+  padding-left: 25px;
+}
+
+#reviewsHeader {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  margin: 0;
+}
+
+#ratings {
+  position: absolute;
+  left: 60%;
+  top: 0%;
+}
+
+#reviewCustomerName, #reviewContent {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+}
+
+#review {
+  position: absolute;
+  left: 8%;
+  top: 6%;
+}
+
+#moreReviews {
+  position: absolute;
+  left: 8%;
+  top: 70%;
+  text-decoration: underline;
+  font-size: 15px;
+  color: #999999;
+}
+
