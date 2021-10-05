@@ -1,3 +1,7 @@
+* {
+  font-family: Montserrat;
+}
+
 header {
   position: fixed;
   width: 100%;
@@ -36,16 +40,11 @@ header {
 
 .companyName {
   position: absolute;
-  left: 37.42%;
-  right: 32.53%;
+  left: 38%;
   top: 1px;
   font-family: Futura;
-  font-style: normal;
   font-weight: 500;
   font-size: 48px;
-  display: flex;
-  align-items: center;
-  text-align: center;
   text-transform: uppercase;
   text-decoration: none;
   color: #362921;
@@ -85,7 +84,6 @@ body, html {
 .menu {
   position: relative;
   width: 100%;
-  /* text-align: center; */
   margin-top: 30px;
   left: 10%;
 }
@@ -96,9 +94,6 @@ body, html {
   color: #FFFFFF;
   display: block;
   transition: 0.3s;
-
-  font-family: Montserrat;
-  /* font-style: normal; */
   font-weight: 200;
   font-size: 20px;
 }
@@ -114,14 +109,12 @@ body, html {
 .line {
   position: relative;
   width: 0%;
-  /* left: 3%; */
   border-top: 1px solid #FFFFFF;
   padding-bottom: 50px;
   transition: 0.5s;
 }
 
 #quizIntro {
-  display: block;
   position: fixed;
   top: 55%;
   left: 38%;
@@ -144,8 +137,6 @@ body, html {
 
 #quizIntro > p {
   position: absolute;
-  font-family: Montserrat;
-  font-style: normal;
   font-weight: 400;
   font-size: 20px;
   color: #FFFFFF;
@@ -157,24 +148,85 @@ body, html {
 #quizQ1 {
   display: none;
   position: fixed;
-  top: 40%;
+  top: 33%;
   left: 35%;
-  width: 28%;
-  border: 3px solid #FFFFFF;
-  height: 32%;
-  background: #C4C4C466;
+  width: 30%;
+  height: 35%;
+  background: rgba(255, 255, 255, 0.7);
+  border: 5px solid #FFFFFF;
 }
 
-#quizQ1 > p {
+#q1Question, #q2Question {
   position: absolute;
-  font-family: Montserrat;
-  font-style: normal;
   font-weight: 400;
   font-size: 20px;
   color: #362921;
   left: 5%;
   margin: 0;
   top: 10%;
+}
+
+#q1Dog {
+  position: absolute;
+  left: 5%;
+  top: 22%;
+}
+
+#q1Cat {
+  position: absolute;
+  left: 55%;
+  top: 22%;
+}
+
+#q1Dog > p, #q1Cat > p, #quizQ2Table p {
+  text-align: center;
+  margin: 0;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#q1SeeAll {
+  position: absolute;
+  text-decoration: underline;
+  left: 43%;
+  top: 85%;
+  color: #362921;
+}
+
+#quizQ2 {
+  display: none;
+  position: fixed;
+  top: 25%;
+  left: 35%;
+  width: 28%;
+  height: 60%;
+  background: rgba(255, 255, 255, 0.7);
+  border: 5px solid #FFFFFF;
+}
+
+#q2Question {
+  top: 3%;
+}
+
+#quizQ2Table {
+  position: absolute;
+  left: 2%;
+  top: 12%;
+  width: 90%;
+  height: 80%;
+}
+
+#quizQ2Table td {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+#q2SeeAll {
+  position: absolute;
+  text-decoration: underline;
+  left: 43%;
+  top: 87%;
+  color: #362921;
 }
 
 .filter {
@@ -209,8 +261,6 @@ body, html {
   left: 30%;
   top: 20%;
   margin: 0;
-  font-family: Montserrat;
-  font-style: normal;
   font-weight: normal;
   font-size: 18px;
   text-transform: uppercase;
@@ -237,8 +287,6 @@ body, html {
   left: 10%;
   top: 20%;
   margin: 0;
-  font-family: Montserrat;
-  font-style: normal;
   font-weight: normal;
   font-size: 18px;
   text-transform: uppercase;
@@ -270,8 +318,6 @@ body, html {
   left: 3%;
   top: 8%;
   margin: 0;
-  font-family: Montserrat;
-  font-style: normal;
   font-weight: 600;
   font-size: 30px;
 }
@@ -297,8 +343,6 @@ body, html {
 
 .browseItemTitle {
   position: absolute;
-  font-family: Montserrat;
-  font-style: normal;
   font-weight: normal;
   font-size: 20px;
   margin: 0;
@@ -308,8 +352,6 @@ body, html {
 .browseItemPrice {
   position: absolute;
   right: 0%;
-  font-family: Montserrat;
-  font-style: normal;
   font-weight: bold;
   font-size: 20px;
   margin: 0;
@@ -335,7 +377,6 @@ body, html {
 
 #imgRow > a {
   width: 15%;
-  /* height: 40%; */
   overflow: hidden;
   margin: 1%;
 }
@@ -348,8 +389,6 @@ body, html {
   position: absolute;
   left: 55%;
   top: 17%;
-  font-family: Montserrat;
-  font-style: normal;
   font-weight: 600;
   font-size: 30px;
 }
@@ -358,8 +397,6 @@ body, html {
   position: absolute;
   left: 90%;
   top: 17%;
-  font-family: Montserrat;
-  font-style: normal;
   font-weight: 400;
   font-size: 30px;
 }
@@ -368,8 +405,6 @@ body, html {
   position: absolute;
   left: 55%;
   top: 25%;
-  font-family: Montserrat;
-  font-style: normal;
   font-weight: 300;
   font-size: 18px;
   width: 39%;
@@ -379,8 +414,6 @@ body, html {
   position: absolute;
   left: 55%;
   top: 40%;
-  font-family: Montserrat;
-  font-style: normal;
   font-weight: 500;
   font-size: 20px;
 }
@@ -443,8 +476,6 @@ body, html {
 .sizeOption > p {
   margin: 0;
   text-align: center;
-  font-family: Montserrat;
-  font-style: normal;
   font-weight: 300;
   font-size: 18px;
 }
@@ -453,8 +484,6 @@ body, html {
   position: absolute;
   left: 55%;
   top: 55%;
-  font-family: Montserrat;
-  font-style: normal;
   font-weight: 500;
   font-size: 20px;
 }
@@ -473,8 +502,6 @@ body, html {
 .colorOption > p {
   margin: 0;
   text-align: center;
-  font-family: Montserrat;
-  font-style: normal;
   font-weight: 300;
   font-size: 18px;
 }
@@ -520,8 +547,6 @@ body, html {
 
 #quantity > p {
   margin: 5px 0px 0px 0px;
-  font-family: Montserrat;
-  font-style: normal;
   font-weight: normal;
   font-size: 24px;
 }
@@ -537,8 +562,6 @@ body, html {
 
 #addToCart > p {
   margin: 5px 0px 0px 0px;
-  font-family: Montserrat;
-  font-style: normal;
   font-weight: 200;
   font-size: 24px;
   color: #FFFFFF;
@@ -550,8 +573,6 @@ body, html {
   position: absolute;
   left: 10%;
   top: 85%;
-  font-family: Montserrat;
-  font-style: normal;
   font-weight: 500;
   font-size: 20px;
 }
@@ -560,8 +581,6 @@ body, html {
   position: absolute;
   left: 10%;
   top: 90%;
-  font-family: Montserrat;
-  font-style: normal;
   font-weight: 200;
   font-size: 18px;
   width: 42%;
@@ -571,8 +590,6 @@ body, html {
   position: absolute;
   left: 11%;
   top: 100%;
-  font-family: Montserrat;
-  font-style: normal;
   font-weight: 200;
   font-size: 18px;
   width: 42%;
@@ -590,8 +607,6 @@ body, html {
 }
 
 #reviewsHeader {
-  font-family: Montserrat;
-  font-style: normal;
   font-weight: 500;
   font-size: 20px;
   margin: 0;
@@ -604,8 +619,6 @@ body, html {
 }
 
 #reviewCustomerName, #reviewContent {
-  font-family: Montserrat;
-  font-style: normal;
   font-weight: 300;
   font-size: 18px;
 }

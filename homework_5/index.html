@@ -10,6 +10,18 @@
       function hideMenu() {
         document.getElementById("overlay").style.left = "-25%";
       }
+
+      function showQ1() {
+        document.getElementById("quizIntro").style.display = "none";
+        document.getElementById("quizQ1").style.display = "block";
+      }
+
+      function showQ2() {
+        document.getElementById("quizQ1").style.display = "none";
+        document.getElementById("quizQ2").style.display = "block";
+      }
+
+      
     </script>
 
     <title>Muddy Paws</title>
@@ -20,7 +32,7 @@
   <body>
     <!-- top header -->
     <header id="homeHeader">
-      <a onmouseover="showMenu()" class="menuIcon"><img src="images/menuIcon.png"></a>
+      <a href="#" onmouseover="showMenu()" class="menuIcon"><img src="images/menuIcon.png"></a>
       <a class="companyName" href="index.html">Muddy Paws</a>
       <a class="cartIcon"><img src="images/cartIcon.png"></a> 
     </header>
@@ -44,21 +56,55 @@
     <!-- quiz -->
     <div id="quizIntro">
       <p>Start your pet's journey</p>
-      <a id="quizArrow"><img src="images/quizArrow.png"></a> 
+      <a href="#" onclick="showQ1()" id="quizArrow"><img src="images/quizArrow.png"></a> 
     </div>
 
     <div id="quizQ1">
-      <p>What type of pet do you have?</p>
-      <table id="q1">
+      <p id="q1Question">What type of pet do you have?</p>
+      <div id="q1Dog">
+        <a href="#" onclick="showQ2()"><img src="images/q1Dog.png"></a>
+        <p>dog</p>
+      </div>
+      <div id="q1Cat">
+        <a href="#" onclick="showQ2()"><img src="images/q1Cat.png"></a>
+        <p>cat</p>
+      </div>
+      <a href="browse.html" id="q1SeeAll">see all</a>
+    </div>
+
+    <div id="quizQ2">
+      <p id="q2Question">What item are you looking for?</p>
+      <table id="quizQ2Table">
         <tr>
-          <td><a><img src="images/quizArrow.png"></a> </td>
-          <td><a><img src="images/quizArrow.png"></a> </td>
+          <td>
+            <div id="q2Backpack">
+              <a href="browse.html"><img src="images/q2Backpack.png"></a>
+              <p>backpack</p>
+            </div>
+          </td>
+          <td>
+            <div id="q2Harness">
+              <a href="browse.html"><img src="images/q2Harness.png"></a>
+              <p>harness</p>
+            </div>
+          </td>
         </tr>
         <tr>
-          <td>dog</td>
-          <td>cat</td>
+          <td>
+            <div id="q2Attachment">
+              <a href="browse.html"><img src="images/q2Attachment.png"></a>
+              <p>attachment</p>
+            </div>
+          </td>
+          <td>
+            <div id="q2Collar">
+              <a href="browse.html"><img src="images/q2Collar.png"></a>
+              <p>collar</p>
+            </div>
+          </td>
         </tr>
       </table>
+      <a href="browse.html" id="q2SeeAll">see all</a>
     </div>
 
     <!-- full page background-->
