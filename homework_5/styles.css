@@ -58,6 +58,10 @@ body, html {
   margin: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .bg {
   background-image: url("images/background.png");
   height: 100%; 
@@ -106,7 +110,7 @@ body, html {
   width: 75%;
 }
 
-.line {
+.line, .sectionLine {
   position: relative;
   width: 0%;
   border-top: 1px solid #FFFFFF;
@@ -302,6 +306,58 @@ body, html {
   top: 25%;
 }
 
+#sectionMenuSideBar {
+  position: fixed;
+  height: 100%;
+  width: 3%;
+  top: 9%;
+  z-index: 8;
+}
+
+#sectionMenuOverlay {
+  height: 100%;
+  width: 20%;
+  position: fixed;
+  z-index: 9;
+  top: 9%;
+  left: -25%;
+  background-color: rgba(243, 243, 243, 0.95);;
+  overflow-x: hidden;
+  transition: 0.5s;
+  display: block;
+}
+
+#sectionMenu {
+  position: relative;
+  width: 100%;
+  margin-top: 30px;
+  left: 10%;
+}
+
+#sectionMenu p {
+  padding: 10px 0px;
+  text-decoration: none;
+  color: black;
+  display: block;
+  transition: 0.3s;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+#sectionMenu p:hover, #sectionMenu p:focus {
+  color: black;
+  cursor: pointer;
+}
+
+#sectionMenu p:hover + .sectionLine {
+  width: 75%;
+}
+
+.sectionLine {
+  border-top: 1px solid black;
+  margin-bottom: 80px;
+}
+
 #backpacks, #harnesses, #attachments, #collars {
   position: relative;
   width: 100%;
@@ -413,7 +469,7 @@ body, html {
 #productSize {
   position: absolute;
   left: 55%;
-  top: 40%;
+  top: 37%;
   font-weight: 500;
   font-size: 20px;
 }
@@ -421,7 +477,7 @@ body, html {
 #sizeSelection{
   position: absolute;
   left: 63%;
-  top: 40%;
+  top: 37%;
   width: 30%;
   display: flex;
   flex-direction: row;
@@ -444,33 +500,39 @@ body, html {
   height: 65%;
   bottom: 10%;
   position: relative;
+  opacity: 20%;
 }
 
 #small > p {
   bottom: 15%;
   position: relative;
+  opacity: 20%;
 }
 
 #medium > a > img {
   height: 80%;
   bottom: 20%;
   position: relative;
+  opacity: 20%;
 }
 
 #medium > p {
   bottom: 30%;
   position: relative;
+  opacity: 20%;
 }
 
 #large > a > img {
   height: 95%;
   bottom: 30%;
   position: relative;
+  opacity: 20%;
 }
 
 #large > p {
   bottom: 45%;
   position: relative;
+  opacity: 20%;
 }
 
 .sizeOption > p {
@@ -480,19 +542,36 @@ body, html {
   font-size: 18px;
 }
 
+#lowStock > p{
+  position: absolute;
+  left: 58%;
+  top: 59%;
+  font-weight: 400;
+  font-size: 18px;
+  color: #B84A4A;
+  text-transform: uppercase;
+}
+
+#lowStock > img {
+  position: absolute;
+  left: 55%;
+  top: 61%;
+  width: 2%;
+}
+
 #productColor {
   position: absolute;
   left: 55%;
-  top: 55%;
+  top: 50%;
   font-weight: 500;
   font-size: 20px;
 }
 
 #colorSelection{
   position: absolute;
-  left: 63%;
-  top: 55%;
-  width: 30%;
+  left: 61%;
+  top: 50%;
+  width: 33%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -515,6 +594,7 @@ body, html {
 
 #strawberryCircle {
   background-color: #ff295c;
+  opacity: 20%;
 }
 
 #blackberryCircle {
@@ -523,10 +603,16 @@ body, html {
 
 #crazyberryCircle {
   background-color: #e529ff;
+  opacity: 20%;
 }
 
 #fireorangeCircle {
   background-color: #ff9207;
+  opacity: 20%;
+}
+
+#strawberry > p, #crazyberry > p, #fireorange > p {
+  opacity: 20%;
 }
 
 #quantity {
@@ -589,7 +675,7 @@ body, html {
 #detailsList {
   position: absolute;
   left: 11%;
-  top: 100%;
+  top: 105%;
   font-weight: 200;
   font-size: 18px;
   width: 42%;

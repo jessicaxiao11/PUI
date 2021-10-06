@@ -10,6 +10,29 @@
       function hideMenu() {
         document.getElementById("overlay").style.left = "-25%";
       }
+
+      function showSideMenu() {
+        // const menu = document.getElementById("overlay");
+        // console.log(menu.style.left)
+        // if (menu.style.left === "-25%") {
+        //   document.getElementById("sectionMenuOverlay").style.left = "0";
+        // }
+        document.getElementById("sectionMenuOverlay").style.left = "0";
+      }
+
+      function hideSideMenu() {
+        document.getElementById("sectionMenuOverlay").style.left = "-25%";
+      }
+      
+      /* scrolling code from:
+       * https://stackoverflow.com/questions/24665602/scrollintoview-scrolls-just-too-far
+       */
+      function scrollToElement(id) {
+        const yOffset = -40; 
+        const element = document.getElementById(id);
+        const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({top: y, behavior: 'smooth'});
+      }
     </script>
 
     <title>Muddy Paws</title>
@@ -51,6 +74,21 @@
           <p>Dogs</p>
           <a class="dropDownIcon"><img src="images/dropDownIcon.png"></a> 
         </div>
+      </div>
+    </div>
+
+    <!-- Section menu for page -->
+    <div id="sectionMenuSideBar" onmouseover="showSideMenu()"></div>
+    <div id="sectionMenuOverlay" onmouseover="showSideMenu()" onmouseout="hideSideMenu()">
+      <div id="sectionMenu">
+        <p onclick="scrollToElement('backpacks')">Backpacks</p>
+        <div class="sectionLine"></div>
+        <p onclick="scrollToElement('harnesses')">Harnesses</p>
+        <div class="sectionLine"></div>
+        <p onclick="scrollToElement('attachments')">Attachments</p>
+        <div class="sectionLine"></div>
+        <p onclick="scrollToElement('collars')">Collars</p>
+        <div class="sectionLine"></div>
       </div>
     </div>
 
