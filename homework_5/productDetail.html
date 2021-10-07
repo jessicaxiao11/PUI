@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 
-<html>
+<html lang="en">
   <head>
     <script>
       function showMenu() {
@@ -19,35 +19,35 @@
   </head>
   <body>
     <!-- top header -->
-    <header>
-      <a onmouseover="showMenu()" class="menuIcon"><img src="images/menuIcon.png"></a>
-      <a class="companyName" href="index.html">MUDDY PAWS</a>
-      <a class="cartIcon"><img src="images/cartIcon.png"></a> 
+    <header id="homeHeader">
+      <a href="#" onmouseover="showMenu()" class="menuIcon" aria-label="mousing over this icon will cause a left side menu to show up"><img src="images/menuIcon.png" alt="hamburger menu icon"></a>
+      <a class="companyName" href="index.html">Muddy Paws</a>
+      <a class="cartIcon"><img src="images/cartIcon.png" alt="shopping cart icon"></a> 
     </header>
 
     <!-- hidden menu -->
-    <div onmouseover="showMenu()" onmouseout="hideMenu()" id="overlay">
+    <div onmouseover="showMenu()" onmouseout="hideMenu()" id="overlay" aria-label="mousing over the menu will cause it to stay open, but mousing out will cause the menu to close">
       <div class="menu">
-        <a href="#">About Us</a>
+        <a href="#" aria-label="click to reach the about us page">About Us</a>
         <div class="line"></div>
-        <a href="browse.html">Dogs</a>
+        <a href="browse.html" aria-label="click to reach the dogs products page">Dogs</a>
         <div class="line"></div>
-        <a href="browse.html">Cats</a>
+        <a href="browse.html" aria-label="click to reach the cats products page">Cats</a>
         <div class="line"></div>
-        <a href="browse.html">All Gear</a>
+        <a href="browse.html" aria-label="click to reach the all gear page">All Gear</a>
         <div class="line"></div>
-        <a href="#">Contact Us</a>
+        <a href="#" aria-label="click to reach the contact us page">Contact Us</a>
         <div class="line"></div>
       </div>
     </div>
 
     <!-- product images -->
-    <img id="mainProductImg" src="images/furdinandBackpack1.png">
+    <img id="mainProductImg" src="images/furdinandBackpack1.png" alt="main image of furdinand backpack">
     <div id="imgRow">
-      <a><img src="images/furdinandBackpack1.png"></a>
-      <a><img src="images/furdinandBackpack2.png"></a>
-      <a><img src="images/furdinandBackpack3.png"></a>
-      <a><img src="images/furdinandBackpack4.png"></a>
+      <a><img src="images/furdinandBackpack1.png" alt="smaller version of main furdinand backpack image"></a>
+      <a><img src="images/furdinandBackpack2.png" alt="smaller version of second picture of furdinand backpack"></a>
+      <a><img src="images/furdinandBackpack3.png" alt="smaller version of third picture of furdinand backpack"></a>
+      <a><img src="images/furdinandBackpack4.png" alt="smaller version of fourth picture of furdinand backpack"></a>
     </div>
 
     <!-- product info with size/color selection -->
@@ -57,19 +57,19 @@
     <p id="productSize">Size:</p>
     <div id="sizeSelection">
       <div id="tiny" class="sizeOption">
-        <a><img src="images/pawIcon.png"></a>
+        <a><img src="images/pawIcon.png" alt="tiny paw icon"></a>
         <p>tiny</p>
       </div>
       <div id="small" class="sizeOption">
-        <a><img src="images/pawIcon.png"></a>
+        <a><img src="images/pawIcon.png" alt="small paw icon"></a>
         <p>small</p>
       </div>
       <div id="medium" class="sizeOption">
-        <a><img src="images/pawIcon.png"></a>
+        <a><img src="images/pawIcon.png" alt="mediuk paw icon"></a>
         <p>medium</p>
       </div>
       <div id="large" class="sizeOption">
-        <a><img src="images/pawIcon.png"></a>
+        <a><img src="images/pawIcon.png" alt="large paw icon"></a>
         <p>large</p>
       </div>
     </div>
@@ -93,13 +93,13 @@
       </div>
     </div>
     <div id="lowStock">
-      <img src="images/lowStock.png">
+      <img src="images/lowStock.png" alt="clock icon representing running out of time">
       <p>low stock</p>
     </div>
     <div id="quantity">
-      <a><img src="images/minusIcon.png"></a>
+      <a><img src="images/minusIcon.png" alt="minus icon, to subtract fro quantity"></a>
       <p>1</p>
-      <a><img src="images/plusIcon.png"></a>
+      <a><img src="images/plusIcon.png" alt="plus icon, to add to quantity"></a>
     </div>
     <div id="addToCart">
       <p>Add to Cart</p>
@@ -118,11 +118,11 @@
     <!--Customer Reviews-->
     <div id="customerReviews">
       <p id="reviewsHeader">Customer Reviews</p>
-      <img id="ratings" src="images/ratings.png">
+      <img id="ratings" src="images/ratings.png" alt="ratings, 4.5 stars">
       <div id="review">
         <p id="reviewCustomerName">Athena said:</p>
         <p id="reviewContent">My dog Buddy LOVES this backpack! We have taken him see Oregon and Colorado is in the works :)</p>
-        <img id="reviewPhoto" src="images/reviewPhoto.png">
+        <img id="reviewPhoto" src="images/reviewPhoto.png" alt="image of Athena's dog running happily">
       </div>
       <p id="moreReviews">read more reviews</p>
     </div>
