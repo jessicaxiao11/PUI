@@ -2,6 +2,8 @@
   font-family: Montserrat;
 }
 
+/* Top header bar including hamburger menu icon,
+ * "Muddy Paws", and shopping cart icon */
 header {
   position: fixed;
   width: 100%;
@@ -56,10 +58,6 @@ header {
 body, html {
   height: 100%;
   margin: 0;
-}
-
-html {
-  scroll-behavior: smooth;
 }
 
 .bg {
@@ -118,6 +116,7 @@ html {
   transition: 0.5s;
 }
 
+/* Quiz intro, question 1 and question 2 styling */
 #quizIntro {
   position: fixed;
   top: 55%;
@@ -233,6 +232,8 @@ html {
   color: #362921;
 }
 
+/* Filter options and selected filters on
+ * product browsing site */
 .filter {
   position: relative;
   width: 100%;
@@ -306,19 +307,20 @@ html {
   top: 25%;
 }
 
+/* Hidden section menu for easy browsing */
 #sectionMenuSideBar {
   position: fixed;
   height: 100%;
   width: 3%;
   top: 9%;
-  z-index: 8;
+  z-index: 7;
 }
 
 #sectionMenuOverlay {
   height: 100%;
   width: 20%;
   position: fixed;
-  z-index: 9;
+  z-index: 8;
   top: 9%;
   left: -25%;
   background-color: rgba(243, 243, 243, 0.95);;
@@ -358,6 +360,7 @@ html {
   margin-bottom: 80px;
 }
 
+/* Styling for each product section */
 #backpacks, #harnesses, #attachments, #collars {
   position: relative;
   width: 100%;
@@ -413,6 +416,7 @@ html {
   margin: 0;
 }
 
+/* Image styling for product detail page */
 #mainProductImg {
   position: absolute;
   width: 40%;
@@ -441,6 +445,7 @@ html {
   width: 100%;
 }
 
+/* Important product details styling */
 #productName {
   position: absolute;
   left: 55%;
@@ -466,6 +471,7 @@ html {
   width: 39%;
 }
 
+/* Size selection */
 #productSize {
   position: absolute;
   left: 55%;
@@ -542,23 +548,7 @@ html {
   font-size: 18px;
 }
 
-#lowStock > p{
-  position: absolute;
-  left: 58%;
-  top: 59%;
-  font-weight: 400;
-  font-size: 18px;
-  color: #B84A4A;
-  text-transform: uppercase;
-}
-
-#lowStock > img {
-  position: absolute;
-  left: 55%;
-  top: 61%;
-  width: 2%;
-}
-
+/* Color selection */
 #productColor {
   position: absolute;
   left: 55%;
@@ -615,6 +605,25 @@ html {
   opacity: 20%;
 }
 
+/* Low stock indicator */
+#lowStock > p{
+  position: absolute;
+  left: 58%;
+  top: 59%;
+  font-weight: 400;
+  font-size: 18px;
+  color: #B84A4A;
+  text-transform: uppercase;
+}
+
+#lowStock > img {
+  position: absolute;
+  left: 55%;
+  top: 61%;
+  width: 2%;
+}
+
+/* Adjust quantity and add to cart */
 #quantity {
   border: 1px solid black;
   left: 60%;
@@ -655,6 +664,7 @@ html {
   text-transform: uppercase;
 }
 
+/* Item details section */
 #detailsHeader {
   position: absolute;
   left: 10%;
@@ -682,6 +692,7 @@ html {
   padding-bottom: 8%;
 }
 
+/* Customer reviews section */
 #customerReviews {
   position: absolute;
   left: 56%;
