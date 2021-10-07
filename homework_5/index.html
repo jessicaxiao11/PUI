@@ -2,6 +2,9 @@
 
 <html lang="en">
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- basic menu and quiz javascript -->
     <script>
       function showMenu() {
         document.getElementById("overlay").style.left = "0";
@@ -20,25 +23,27 @@
         document.getElementById("quizQ1").style.display = "none";
         document.getElementById("quizQ2").style.display = "block";
       }
-
-      
     </script>
-
     <title>Muddy Paws</title>
     <link rel="stylesheet" href="styles.css" />
-    <link href='https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400' 
+    rel='stylesheet'>
 		<link rel="icon" href="images/pawIcon.png">
   </head>
   <body>
     <!-- top header -->
     <header id="homeHeader">
-      <a href="#" onmouseover="showMenu()" class="menuIcon" aria-label="mousing over this icon will cause a left side menu to show up"><img src="images/menuIcon.png" alt="hamburger menu icon"></a>
+      <a href="#" onmouseover="showMenu()" class="menuIcon" 
+      aria-label="mousing over this icon will cause a left side menu to show up">
+      <img src="images/menuIcon.png" alt="hamburger menu icon"></a>
       <a class="companyName" href="index.html">Muddy Paws</a>
       <a class="cartIcon"><img src="images/cartIcon.png" alt="shopping cart icon"></a> 
     </header>
 
     <!-- hidden menu -->
-    <div onmouseover="showMenu()" onmouseout="hideMenu()" id="overlay" aria-label="mousing over the menu will cause it to stay open, but mousing out will cause the menu to close">
+    <div onmouseover="showMenu()" onmouseout="hideMenu()" id="overlay" 
+    aria-label="mousing over the menu will cause it to stay open, 
+    but mousing out will cause the menu to close">
       <div class="menu">
         <a href="#" aria-label="click to reach the about us page">About Us</a>
         <div class="line"></div>
@@ -53,38 +58,51 @@
       </div>
     </div>
 
-    <!-- quiz -->
+    <!-- intro to quiz -->
     <div id="quizIntro">
       <p>Start your pet's journey</p>
-      <a href="#" onclick="showQ1()" id="quizArrow" aria-label="click arrow to start quiz"><img src="images/quizArrow.png" alt="left arrow to start quiz"></a> 
+      <a href="#" onclick="showQ1()" id="quizArrow" 
+      aria-label="click arrow to start quiz">
+      <img src="images/quizArrow.png" alt="left arrow to start quiz"></a> 
     </div>
 
+    <!-- quiz question 1 -->
     <div id="quizQ1">
       <p id="q1Question">What type of pet do you have?</p>
       <div id="q1Dog">
-        <a href="#" onclick="showQ2()" aria-label="click dog image option to reach second quiz question"><img src="images/q1Dog.png" alt="image of dog"></a>
+        <a href="#" onclick="showQ2()" 
+        aria-label="click dog image option to reach second quiz question">
+        <img src="images/q1Dog.png" alt="image of dog"></a>
         <p>dog</p>
       </div>
       <div id="q1Cat">
-        <a href="#" onclick="showQ2()" aria-label="click cat image option to reach second quiz question"><img src="images/q1Cat.png" alt="image of cat"></a>
+        <a href="#" onclick="showQ2()" 
+        aria-label="click cat image option to reach second quiz question">
+        <img src="images/q1Cat.png" alt="image of cat"></a>
         <p>cat</p>
       </div>
-      <a href="browse.html" id="q1SeeAll" aria-label="click to see all products">see all</a>
+      <a href="browse.html" id="q1SeeAll" 
+      aria-label="click to see all products">see all</a>
     </div>
 
+    <!-- quiz question 2 -->
     <div id="quizQ2">
       <p id="q2Question">What item are you looking for?</p>
       <table id="quizQ2Table">
         <tr>
           <td>
             <div id="q2Backpack">
-              <a href="browse.html" aria-label="click backpack image option to browse products"><img src="images/q2Backpack.png" alt="backpack (product) image"></a>
+              <a href="browse.html" 
+              aria-label="click backpack image option to browse products">
+              <img src="images/q2Backpack.png" alt="backpack (product) image"></a>
               <p>backpack</p>
             </div>
           </td>
           <td>
             <div id="q2Harness">
-              <a href="browse.html" aria-label="click harness image option to browse products"><img src="images/q2Harness.png" alt="harness on dog (product) image"></a>
+              <a href="browse.html" 
+              aria-label="click harness image option to browse products">
+              <img src="images/q2Harness.png" alt="harness on dog (product) image"></a>
               <p>harness</p>
             </div>
           </td>
@@ -92,13 +110,17 @@
         <tr>
           <td>
             <div id="q2Attachment">
-              <a href="browse.html" aria-label="click attachment image option to browse products"><img src="images/q2Attachment.png" alt="water bottle attachment (product) image"></a>
+              <a href="browse.html" 
+              aria-label="click attachment image option to browse products">
+              <img src="images/q2Attachment.png" alt="water bottle attachment (product) image"></a>
               <p>attachment</p>
             </div>
           </td>
           <td>
             <div id="q2Collar">
-              <a href="browse.html" aria-label="click collar image option to browse products"><img src="images/q2Collar.png" alt="collar on dog (product) image"></a>
+              <a href="browse.html" 
+              aria-label="click collar image option to browse products">
+              <img src="images/q2Collar.png" alt="collar on dog (product) image"></a>
               <p>collar</p>
             </div>
           </td>

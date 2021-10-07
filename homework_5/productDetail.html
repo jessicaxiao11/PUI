@@ -2,6 +2,9 @@
 
 <html lang="en">
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- basic menu javascript -->
     <script>
       function showMenu() {
         document.getElementById("overlay").style.left = "0";
@@ -11,22 +14,26 @@
         document.getElementById("overlay").style.left = "-25%";
       }
     </script>
-
     <title>Muddy Paws</title>
     <link rel="stylesheet" href="styles.css" />
-    <link href='https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600' 
+    rel='stylesheet'>
 		<link rel="icon" href="images/pawIcon.png">
   </head>
   <body>
     <!-- top header -->
     <header id="homeHeader">
-      <a href="#" onmouseover="showMenu()" class="menuIcon" aria-label="mousing over this icon will cause a left side menu to show up"><img src="images/menuIcon.png" alt="hamburger menu icon"></a>
+      <a href="#" onmouseover="showMenu()" class="menuIcon" 
+      aria-label="mousing over this icon will cause a left side menu to show up">
+      <img src="images/menuIcon.png" alt="hamburger menu icon"></a>
       <a class="companyName" href="index.html">Muddy Paws</a>
       <a class="cartIcon"><img src="images/cartIcon.png" alt="shopping cart icon"></a> 
     </header>
 
     <!-- hidden menu -->
-    <div onmouseover="showMenu()" onmouseout="hideMenu()" id="overlay" aria-label="mousing over the menu will cause it to stay open, but mousing out will cause the menu to close">
+    <div onmouseover="showMenu()" onmouseout="hideMenu()" id="overlay" 
+    aria-label="mousing over the menu will cause it to stay open, 
+    but mousing out will cause the menu to close">
       <div class="menu">
         <a href="#" aria-label="click to reach the about us page">About Us</a>
         <div class="line"></div>
@@ -44,16 +51,21 @@
     <!-- product images -->
     <img id="mainProductImg" src="images/furdinandBackpack1.png" alt="main image of furdinand backpack">
     <div id="imgRow">
-      <a><img src="images/furdinandBackpack1.png" alt="smaller version of main furdinand backpack image"></a>
-      <a><img src="images/furdinandBackpack2.png" alt="smaller version of second picture of furdinand backpack"></a>
-      <a><img src="images/furdinandBackpack3.png" alt="smaller version of third picture of furdinand backpack"></a>
-      <a><img src="images/furdinandBackpack4.png" alt="smaller version of fourth picture of furdinand backpack"></a>
+      <a><img src="images/furdinandBackpack1.png" 
+        alt="smaller version of main furdinand backpack image"></a>
+      <a><img src="images/furdinandBackpack2.png" 
+        alt="smaller version of second picture of furdinand backpack"></a>
+      <a><img src="images/furdinandBackpack3.png" 
+        alt="smaller version of third picture of furdinand backpack"></a>
+      <a><img src="images/furdinandBackpack4.png" 
+        alt="smaller version of fourth picture of furdinand backpack"></a>
     </div>
 
     <!-- product info with size/color selection -->
     <p id="productName">Furdinand Backpack</p>
     <p id="productPrice">$95</p>
-    <p id="productDescription">Ready to take your dog on adventures? This backpack will be the perfect way to let them safely explore the outdoors!</p>
+    <p id="productDescription">Ready to take your dog on adventures? 
+    This backpack will be the perfect way to let them safely explore the outdoors!</p>
     <p id="productSize">Size:</p>
     <div id="sizeSelection">
       <div id="tiny" class="sizeOption">
@@ -107,7 +119,9 @@
 
     <!--Item Details-->
     <p id="detailsHeader">Item Details</p>
-    <p id="detailsDescription">The Furdinand backpack is both comfortable and practical! For reference, it typically fits a small French Bulldog with plenty of room to move around. Our first-time adventure dogs love to explore the world through this see-through backpack. </p>
+    <p id="detailsDescription">The Furdinand backpack is both comfortable and practical! 
+    For reference, it typically fits a small French Bulldog with plenty of room to move around. 
+    Our first-time adventure dogs love to explore the world through this see-through backpack. </p>
     <ul id="detailsList">
       <li>Made with cotton and polyester.</li>
       <li>Dimensions: 20" (width) x 20" (length) x 30" (height) </li>
@@ -121,7 +135,8 @@
       <img id="ratings" src="images/ratings.png" alt="ratings, 4.5 stars">
       <div id="review">
         <p id="reviewCustomerName">Athena said:</p>
-        <p id="reviewContent">My dog Buddy LOVES this backpack! We have taken him see Oregon and Colorado is in the works :)</p>
+        <p id="reviewContent">My dog Buddy LOVES this backpack! 
+        We have taken him see Oregon and Colorado is in the works :)</p>
         <img id="reviewPhoto" src="images/reviewPhoto.png" alt="image of Athena's dog running happily">
       </div>
       <p id="moreReviews">read more reviews</p>
