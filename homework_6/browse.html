@@ -1,0 +1,203 @@
+<!DOCTYPE HTML>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- basic menu and section menu javascript -->
+    <script>
+      function showMenu() {
+        document.getElementById("overlay").style.left = "0";
+      }
+
+      function hideMenu() {
+        document.getElementById("overlay").style.left = "-25%";
+      }
+
+      function showSideMenu() {
+        document.getElementById("sectionMenuOverlay").style.left = "0";
+      }
+
+      function hideSideMenu() {
+        document.getElementById("sectionMenuOverlay").style.left = "-25%";
+      }
+      
+      /* scrolling code from:
+       * https://stackoverflow.com/questions/24665602/scrollintoview-scrolls-just-too-far
+       */
+      function scrollToElement(id) {
+        const yOffset = -40; 
+        const element = document.getElementById(id);
+        const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({top: y, behavior: 'smooth'});
+      }
+    </script>
+    <title>Muddy Paws</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600' 
+    rel='stylesheet'>
+		<link rel="icon" href="images/pawIcon.png">
+  </head>
+  <body>
+    <!-- top header -->
+    <header>
+      <a href="#" onmouseover="showMenu()" class="menuIcon" 
+      aria-label="mousing over this icon will cause a left side menu to show up">
+      <img src="images/menuIcon.png" alt="hamburger menu icon"></a>
+      <a class="companyName" href="index.html">Muddy Paws</a>
+      <a class="cartIcon" href="cart.html"><img src="images/cartIcon.png" alt="shopping cart icon"></a> 
+    </header>
+
+    <!-- hidden menu -->
+    <div onmouseover="showMenu()" onmouseout="hideMenu()" id="overlay" 
+    aria-label="mousing over the menu will cause it to stay open, 
+    but mousing out will cause the menu to close">
+      <div class="menu">
+        <a href="#" aria-label="click to reach the about us page">About Us</a>
+        <div class="line"></div>
+        <a href="browse.html" aria-label="click to reach the dogs products page">Dogs</a>
+        <div class="line"></div>
+        <a href="browse.html" aria-label="click to reach the cats products page">Cats</a>
+        <div class="line"></div>
+        <a href="browse.html" aria-label="click to reach the all gear page">All Gear</a>
+        <div class="line"></div>
+        <a href="#" aria-label="click to reach the contact us page">Contact Us</a>
+        <div class="line"></div>
+      </div>
+    </div>
+
+    <!-- filter option and selected filters -->
+    <div class="filter">
+      <div class="filterOptions">
+        <a class="filterIcon"><img src="images/filterIcon.png" alt="small filter icon"></a> 
+        <p>Filter</p>
+      </div>
+      <div class="selectedFilters">
+        <div class="dogFilter">
+          <p>Dogs</p>
+          <a class="dropDownIcon"><img src="images/dropDownIcon.png" alt="down arrow drop down icon"></a> 
+        </div>
+      </div>
+    </div>
+
+    <!-- hidden section menu -->
+    <div id="sectionMenuSideBar" onmouseover="showSideMenu()" 
+    aria-label="mousing to the left side of the screen will bring up the section menu"></div>
+    <div id="sectionMenuOverlay" onmouseover="showSideMenu()" 
+    onmouseout="hideSideMenu()" aria-label="staying in the section menu will leave it open, 
+    mousing out will close the menu">
+      <div id="sectionMenu">
+        <p onclick="scrollToElement('backpacks')" aria-label="scroll to backpacks section">Backpacks</p>
+        <div class="sectionLine"></div>
+        <p onclick="scrollToElement('harnesses')" aria-label="scroll to harnesses section">Harnesses</p>
+        <div class="sectionLine"></div>
+        <p onclick="scrollToElement('attachments')" aria-label="scroll to attachments section">Attachments</p>
+        <div class="sectionLine"></div>
+        <p onclick="scrollToElement('collars')" aria-label="scroll to collars section">Collars</p>
+        <div class="sectionLine"></div>
+      </div>
+    </div>
+
+    <!-- backpack section -->
+    <div class="browseSection" id="backpacks">
+      <p>Backpacks</p>
+      <div id="backpackOptions">
+        <div class="browseOption">
+          <a><img src="images/backpack1.png" alt="image of the Paw-ter Backpack"></a> 
+          <p class="browseItemTitle">Paw-ter Backpack</p>
+          <p class="browseItemPrice">$59</p>
+        </div>
+        <!-- Note that the Furdinand Backpack is the product that has a detail page -->
+        <div class="browseOption">
+          <a href="productDetail.html" 
+          aria-label="click to view the Furdinand Backpack product page">
+          <img src="images/backpack2.png" alt="image of the Furdinand Backpack"></a> 
+          <p class="browseItemTitle">Furdinand Backpack</p>
+          <p class="browseItemPrice">$54</p>
+        </div>
+        <div class="browseOption">
+          <a><img src="images/backpack3.png" alt="image of the Chewy Backpack"></a> 
+          <p class="browseItemTitle">Chewy Backpack</p>
+          <p class="browseItemPrice">$65</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- harness section -->
+    <div class="browseSection" id="harnesses">
+      <p>Harnesses</p>
+      <div id="harnessOptions">
+        <div class="browseOption">
+          <a><img src="images/harness1.png" alt="image of the Buddy Harness"></a> 
+          <p class="browseItemTitle">Buddy Harness</p>
+          <p class="browseItemPrice">$72</p>
+        </div>
+        <div class="browseOption">
+          <a><img src="images/harness2.png" alt="image of the Good Boy Harness"></a> 
+          <p class="browseItemTitle">Good Boy Harness</p>
+          <p class="browseItemPrice">$59</p>
+        </div>
+        <div class="browseOption">
+          <a><img src="images/harness3.png" alt="image of the Doggo Harness"></a> 
+          <p class="browseItemTitle">Doggo Harness</p>
+          <p class="browseItemPrice">$54</p>
+        </div>
+        <div class="browseOption">
+          <a><img src="images/harness4.png" alt="image of the Doge Harness"></a> 
+          <p class="browseItemTitle">Doge Harness</p>
+          <p class="browseItemPrice">$39</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- attachment section -->
+    <div class="browseSection" id="attachments">
+      <p>Attachments</p>
+      <div id="attachmentOptions">
+        <div class="browseOption">
+          <a><img src="images/attachment1.png" alt="image of the Luka Water Bottle Attachment"></a> 
+          <p class="browseItemTitle">Luka Water Bottle Attachment</p>
+          <p class="browseItemPrice">$72</p>
+        </div>
+        <div class="browseOption">
+          <a><img src="images/attachment2.png" alt="image of the Deni Water Bottle Attachment"></a> 
+          <p class="browseItemTitle">Deni Water Bottle Attachment</p>
+          <p class="browseItemPrice">$59</p>
+        </div>
+        <div class="browseOption">
+          <a><img src="images/attachment3.png" alt="image of the Chow Food Storage Attachment"></a> 
+          <p class="browseItemTitle">Chow Food Storage Attachment</p>
+          <p class="browseItemPrice">$54</p>
+        </div>
+        <div class="browseOption">
+          <a><img src="images/attachment4.png" alt="image of the Munchies Food Storage Attachment"></a> 
+          <p class="browseItemTitle">Munchies Food Storage Attachment</p>
+          <p class="browseItemPrice">$39</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- collar section -->
+    <div class="browseSection" id="collars">
+      <p>Collars</p>
+      <div id="collarOptions">
+        <div class="browseOption">
+          <a><img src="images/collar1.png" alt="image of the Decker Tracker Collar"></a> 
+          <p class="browseItemTitle">Decker Tracker Collar</p>
+          <p class="browseItemPrice">$72</p>
+        </div>
+        <div class="browseOption">
+          <a><img src="images/collar2.png" alt="image of the Daisy Collar"></a> 
+          <p class="browseItemTitle">Daisy Collar</p>
+          <p class="browseItemPrice">$54</p>
+        </div>
+        <div class="browseOption">
+          <a><img src="images/collar3.png" alt="image of the Margot Collar"></a> 
+          <p class="browseItemTitle">Margot Collar</p>
+          <p class="browseItemPrice">$65</p>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>

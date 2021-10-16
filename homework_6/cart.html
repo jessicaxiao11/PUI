@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- basic menu and section menu javascript -->
+    <script>
+      function showMenu() {
+        document.getElementById("overlay").style.left = "0";
+      }
+
+      function hideMenu() {
+        document.getElementById("overlay").style.left = "-25%";
+      }
+    </script>
+    <title>Muddy Paws</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600' 
+    rel='stylesheet'>
+		<link rel="icon" href="images/pawIcon.png">
+  </head>
+  <body>
+    <!-- top header -->
+    <header>
+      <a href="#" onmouseover="showMenu()" class="menuIcon" 
+      aria-label="mousing over this icon will cause a left side menu to show up">
+      <img src="images/menuIcon.png" alt="hamburger menu icon"></a>
+      <a class="companyName" href="index.html">Muddy Paws</a>
+      <a class="cartIcon" href="cart.html"><img src="images/cartIcon.png" alt="shopping cart icon"></a> 
+    </header>
+
+    <!-- hidden menu -->
+    <div onmouseover="showMenu()" onmouseout="hideMenu()" id="overlay" 
+    aria-label="mousing over the menu will cause it to stay open, 
+    but mousing out will cause the menu to close">
+      <div class="menu">
+        <a href="#" aria-label="click to reach the about us page">About Us</a>
+        <div class="line"></div>
+        <a href="browse.html" aria-label="click to reach the dogs products page">Dogs</a>
+        <div class="line"></div>
+        <a href="browse.html" aria-label="click to reach the cats products page">Cats</a>
+        <div class="line"></div>
+        <a href="browse.html" aria-label="click to reach the all gear page">All Gear</a>
+        <div class="line"></div>
+        <a href="#" aria-label="click to reach the contact us page">Contact Us</a>
+        <div class="line"></div>
+      </div>
+    </div>
+
+  </body>
+</html>
