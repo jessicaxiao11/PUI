@@ -16,9 +16,9 @@ Key interactions:
 ## Homework 6A
 
 
-Pages include: an additional shopping cart page, accessible from header of any page
+Additional pages include: an additional shopping cart page, accessible from header of any page
 
-Key interactions:
+New key interactions:
 
 <ul>
 <li>Selecting different sizes and colors in the product detail page. The selected color will change the image that is displayed, also indicate if the item is in low stock.</li>
