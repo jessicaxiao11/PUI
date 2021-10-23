@@ -4,34 +4,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- basic menu and section menu javascript -->
-    <script>
-      function showMenu() {
-        document.getElementById("overlay").style.left = "0";
-      }
-
-      function hideMenu() {
-        document.getElementById("overlay").style.left = "-25%";
-      }
-
-      function showSideMenu() {
-        document.getElementById("sectionMenuOverlay").style.left = "0";
-      }
-
-      function hideSideMenu() {
-        document.getElementById("sectionMenuOverlay").style.left = "-25%";
-      }
-      
-      /* scrolling code from:
-       * https://stackoverflow.com/questions/24665602/scrollintoview-scrolls-just-too-far
-       */
-      function scrollToElement(id) {
-        const yOffset = -40; 
-        const element = document.getElementById(id);
-        const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-        window.scrollTo({top: y, behavior: 'smooth'});
-      }
-    </script>
+    <script src="script.js"></script>
     <title>Muddy Paws</title>
     <link rel="stylesheet" href="styles.css" />
     <link href='https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600' 
@@ -46,6 +19,7 @@
       <img src="images/menuIcon.png" alt="hamburger menu icon"></a>
       <a class="companyName" href="index.html">Muddy Paws</a>
       <a class="cartIcon" href="cart.html"><img src="images/cartIcon.png" alt="shopping cart icon"></a> 
+      <div class="cartNum"></div>
     </header>
 
     <!-- hidden menu -->

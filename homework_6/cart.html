@@ -4,16 +4,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- basic menu and section menu javascript -->
-    <script>
-      function showMenu() {
-        document.getElementById("overlay").style.left = "0";
-      }
-
-      function hideMenu() {
-        document.getElementById("overlay").style.left = "-25%";
-      }
-    </script>
+    <script src="script.js"></script>
     <title>Muddy Paws</title>
     <link rel="stylesheet" href="styles.css" />
     <link href='https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600' 
@@ -28,6 +19,7 @@
       <img src="images/menuIcon.png" alt="hamburger menu icon"></a>
       <a class="companyName" href="index.html">Muddy Paws</a>
       <a class="cartIcon" href="cart.html"><img src="images/cartIcon.png" alt="shopping cart icon"></a> 
+      <div class="cartNum"></div>
     </header>
 
     <!-- hidden menu -->
@@ -49,36 +41,35 @@
     </div>
 
     <!-- cart items -->
-    <p id="cartTitle">Shopping Cart</p>
+    <div id="cartTitle">Shopping Cart</div>
     <div id="cartItems">
       <div id="cartItem1">
-        <img class="cartItemImage" src="images/furdinandBackpack1.png" alt="cart item image">
+        <img class="cartItemImage" src="images/furdinandBackpack1.png" alt="image of furdinand backpack">
         <p class="cartItemTitle">Furdinand Backpack</p>
         <p class="cartItemSize">Size: Medium</p>
-        <p class="cartItemColor">Color: Crazyberry</p>
+        <p class="cartItemColor">Color: Blackberry</p>
         <p class="cartItemPrice">$95</p>
       </div>
     </div>
-    <div id="cartLine"></div>
 
     <!-- order summary -->
     <div id="orderSummary">
       <p id="orderSummaryTitle">Order Summary</p>
       <div id="subtotal" class="priceCategory">
         <p class="categoryTitle">Subtotal</p>
-        <p class=categoryPrice">$95</p>
+        <p class="categoryPrice">$95</p>
       </div>
       <div id="taxes" class="priceCategory">
         <p class="categoryTitle">Estimated Taxes</p>
-        <p class=categoryPrice">$10.12</p>
+        <p class="categoryPrice">$10.12</p>
       </div>
       <div id="shipping" class="priceCategory">
         <p class="categoryTitle">Shipping</p>
-        <p class=categoryPrice">$5.99</p>
+        <p class="categoryPrice">$5.99</p>
       </div>
       <div id="total" class="priceCategory">
         <p class="categoryTitle">Total</p>
-        <p class=categoryPrice">$108.11</p>
+        <p class="categoryPrice">$108.11</p>
       </div>
       <div id="checkout">
         <p>Checkout</p>

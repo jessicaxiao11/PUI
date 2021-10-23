@@ -4,29 +4,10 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- basic menu and quiz javascript -->
-    <script>
-      function showMenu() {
-        document.getElementById("overlay").style.left = "0";
-      }
-
-      function hideMenu() {
-        document.getElementById("overlay").style.left = "-25%";
-      }
-
-      function showQ1() {
-        document.getElementById("quizIntro").style.display = "none";
-        document.getElementById("quizQ1").style.display = "block";
-      }
-
-      function showQ2() {
-        document.getElementById("quizQ1").style.display = "none";
-        document.getElementById("quizQ2").style.display = "block";
-      }
-    </script>
+    <script src="script.js"></script>
     <title>Muddy Paws</title>
     <link rel="stylesheet" href="styles.css" />
-    <link href='https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400' 
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,600' 
     rel='stylesheet'>
 		<link rel="icon" href="images/pawIcon.png">
   </head>
@@ -38,6 +19,7 @@
       <img src="images/menuIcon.png" alt="hamburger menu icon"></a>
       <a class="companyName" href="index.html">Muddy Paws</a>
       <a class="cartIcon" href="cart.html"><img src="images/cartIcon.png" alt="shopping cart icon"></a> 
+      <div class="cartNum"></div>
     </header>
 
     <!-- hidden menu -->

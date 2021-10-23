@@ -4,16 +4,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- basic menu javascript -->
-    <script>
-      function showMenu() {
-        document.getElementById("overlay").style.left = "0";
-      }
-
-      function hideMenu() {
-        document.getElementById("overlay").style.left = "-25%";
-      }
-    </script>
+    <script src="script.js"></script>
     <title>Muddy Paws</title>
     <link rel="stylesheet" href="styles.css" />
     <link href='https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600' 
@@ -28,6 +19,7 @@
       <img src="images/menuIcon.png" alt="hamburger menu icon"></a>
       <a class="companyName" href="index.html">Muddy Paws</a>
       <a class="cartIcon" href="cart.html"><img src="images/cartIcon.png" alt="shopping cart icon"></a> 
+      <div class="cartNum"></div>
     </header>
 
     <!-- hidden menu -->
@@ -51,13 +43,13 @@
     <!-- product images -->
     <img id="mainProductImg" src="images/furdinandBackpack1.png" alt="main image of furdinand backpack">
     <div id="imgRow">
-      <a><img src="images/furdinandBackpack1.png" 
+      <a id="productImg1"><img src="images/furdinandBackpack1.png" 
         alt="smaller version of main furdinand backpack image"></a>
-      <a><img src="images/furdinandBackpack2.png" 
+      <a id="productImg2"><img src="images/furdinandBackpack2.png" 
         alt="smaller version of second picture of furdinand backpack"></a>
-      <a><img src="images/furdinandBackpack3.png" 
+      <a id="productImg3"><img src="images/furdinandBackpack3.png" 
         alt="smaller version of third picture of furdinand backpack"></a>
-      <a><img src="images/furdinandBackpack4.png" 
+      <a id="productImg4"><img src="images/furdinandBackpack4.png" 
         alt="smaller version of fourth picture of furdinand backpack"></a>
     </div>
 
@@ -68,38 +60,38 @@
     This backpack will be the perfect way to let them safely explore the outdoors!</p>
     <p id="productSize">Size:</p>
     <div id="sizeSelection">
-      <div id="tiny" class="sizeOption">
+      <div id="tiny" class="sizeOption" onclick="selectSize('tiny')">
         <a><img src="images/pawIcon.png" alt="tiny paw icon"></a>
         <p>tiny</p>
       </div>
-      <div id="small" class="sizeOption">
+      <div id="small" class="sizeOption" onclick="selectSize('small')">
         <a><img src="images/pawIcon.png" alt="small paw icon"></a>
         <p>small</p>
       </div>
-      <div id="medium" class="sizeOption">
+      <div id="medium" class="sizeOption" onclick="selectSize('medium')">
         <a><img src="images/pawIcon.png" alt="mediuk paw icon"></a>
         <p>medium</p>
       </div>
-      <div id="large" class="sizeOption">
+      <div id="large" class="sizeOption" onclick="selectSize('large')">
         <a><img src="images/pawIcon.png" alt="large paw icon"></a>
         <p>large</p>
       </div>
     </div>
     <p id="productColor">Color:</p>
     <div id="colorSelection">
-      <div id="strawberry" class="colorOption">
+      <div id="strawberry" class="colorOption" onclick="selectColor('strawberry')">
         <div id="strawberryCircle"></div>
         <p>strawberry</p>
       </div>
-      <div id="blackberry" class="colorOption">
+      <div id="blackberry" class="colorOption" onclick="selectColor('blackberry')">
         <div id="blackberryCircle"></div>
         <p>blackberry</p>
       </div>
-      <div id="crazyberry" class="colorOption">
+      <div id="crazyberry" class="colorOption" onclick="selectColor('crazyberry')">
         <div id="crazyberryCircle"></div>
         <p>crazyberry</p>
       </div>
-      <div id="fireorange" class="colorOption">
+      <div id="fireorange" class="colorOption" onclick="selectColor('fireorange')">
         <div id="fireorangeCircle"></div>
         <p>fire orange</p>
       </div>
@@ -113,7 +105,7 @@
       <p>1</p>
       <a><img src="images/plusIcon.png" alt="plus icon, to add to quantity"></a>
     </div>
-    <div id="addToCart">
+    <div id="addToCart" onclick="addToCart()">
       <p>Add to Cart</p>
     </div>
 

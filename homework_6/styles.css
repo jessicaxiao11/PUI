@@ -40,6 +40,14 @@ header {
   float: right;
 }
 
+.cartNum {
+  font-size: 20px;
+  font-weight: 600;
+  position: absolute;
+  right: 2.9%;
+  top: 5%;
+}
+
 .companyName {
   position: absolute;
   left: 38%;
@@ -403,8 +411,9 @@ body, html {
 .browseItemTitle {
   position: absolute;
   font-weight: normal;
-  font-size: 20px;
+  font-size: 18px;
   margin: 0;
+  width: 80%;
 
 }
 
@@ -443,6 +452,10 @@ body, html {
 
 #imgRow > a > img {
   width: 100%;
+}
+
+#productImg2, #productImg3, #productImg4 {
+  opacity: 20%;
 }
 
 /* Important product details styling */
@@ -491,6 +504,10 @@ body, html {
   height: 10%;
 }
 
+#small, #medium, #large {
+  opacity: 20%;
+}
+
 #tiny > a > img {
   height: 50%;
   bottom: 0%;
@@ -506,39 +523,33 @@ body, html {
   height: 65%;
   bottom: 10%;
   position: relative;
-  opacity: 20%;
 }
 
 #small > p {
   bottom: 15%;
   position: relative;
-  opacity: 20%;
 }
 
 #medium > a > img {
   height: 80%;
   bottom: 20%;
   position: relative;
-  opacity: 20%;
 }
 
 #medium > p {
   bottom: 30%;
   position: relative;
-  opacity: 20%;
 }
 
 #large > a > img {
   height: 95%;
   bottom: 30%;
   position: relative;
-  opacity: 20%;
 }
 
 #large > p {
   bottom: 45%;
   position: relative;
-  opacity: 20%;
 }
 
 .sizeOption > p {
@@ -584,7 +595,6 @@ body, html {
 
 #strawberryCircle {
   background-color: #ff295c;
-  opacity: 20%;
 }
 
 #blackberryCircle {
@@ -593,15 +603,13 @@ body, html {
 
 #crazyberryCircle {
   background-color: #e529ff;
-  opacity: 20%;
 }
 
 #fireorangeCircle {
   background-color: #ff9207;
-  opacity: 20%;
 }
 
-#strawberry > p, #crazyberry > p, #fireorange > p {
+#strawberry, #crazyberry, #fireorange {
   opacity: 20%;
 }
 
@@ -653,6 +661,10 @@ body, html {
   position: absolute;
   width: 18%;
   background-color: black;
+}
+
+#addToCart {
+  cursor: pointer;
 }
 
 #addToCart > p {
@@ -736,5 +748,137 @@ body, html {
 }
 
 #cart {
-  background-color: #E5E5E5;
+  background-color: #F1F1F1;
+}
+
+#cartTitle {
+  position: relative;
+  padding-left: 9%;
+  top: 25%;
+  font-weight: 600;
+  font-size: 36px;
+  margin: 0;
+}
+
+#cartItems {
+  position: relative;
+  left: 10%;
+  top: 30%;
+  border-bottom: 1px;
+  border-bottom-style: solid;
+  width: 55%;
+  height: 30%;
+}
+
+.cartItemImage {
+  width: 30%;
+  position: absolute;
+}
+
+.cartItemTitle {
+  position: absolute;
+  left: 32%;
+  font-weight: 500;
+  font-size: 18px;
+  margin: 0;
+}
+
+.cartItemColor {
+  position: absolute;
+  left: 32%;
+  top: 15%;
+  font-weight: 300;
+}
+
+.cartItemSize {
+  position: absolute;
+  left: 32%;
+  top: 25%;
+  font-weight: 300;
+}
+
+.cartItemPrice {
+  position: absolute;
+  right: 5%;
+  font-weight: 500;
+  font-size: 18px;
+  margin: 0;
+}
+
+#orderSummary {
+  position: absolute;
+  left: 70%;
+  top: 30%;
+  width: 25%;
+  height: 50%;
+  background-color: white;
+}
+
+#orderSummaryTitle {
+  text-align: center;
+  font-weight: 400;
+  font-size: 30px;
+}
+
+.priceCategory {
+  width: 70%;
+  left: 15%;
+  right: 15%;
+  height: 7%;
+  border-bottom: 1px rgba(0, 0, 0, 0.3);
+  border-bottom-style: solid;
+}
+
+.categoryTitle {
+  position: absolute;
+  left: 0%;
+  margin: 0;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.categoryPrice {
+  position: absolute;
+  right: 0;
+  margin: 0;
+}
+
+#subtotal {
+  top: 25%;
+  position: absolute;
+}
+
+#taxes {
+  top: 40%;
+  position: absolute;
+}
+
+#shipping {
+  top: 55%;
+  position: absolute;
+}
+
+#total {
+  top: 75%;
+  position: absolute;
+  border: none;
+}
+
+#checkout {
+  position: absolute;
+  top: 85%;
+  height: 10%;
+  left: 10%;
+  right: 10%;
+  width: 80%;
+  background-color: black;
+}
+
+#checkout p {
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+  margin: 0;
+  margin-top: 9px;
 }
