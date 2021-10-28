@@ -1,0 +1,884 @@
+* {
+  font-family: Montserrat;
+}
+
+/* Top header bar including hamburger menu icon,
+ * "Muddy Paws", and shopping cart icon */
+header {
+  position: fixed;
+  width: 100%;
+  border-bottom: 1px;
+  border-bottom-style: solid;
+  height: 9%;
+  left: 0;
+  background-color: #FFFFFF;
+  z-index: 9;
+}
+
+#homeHeader {
+  background-color: transparent;
+}
+
+.menuIcon {
+  left: 20px;
+  position: absolute;
+  top: 15px;
+}
+
+.menuIcon > img {
+  width: 40%;
+}
+
+.cartIcon {
+  right: 30px;
+  top: 10px;
+  position: absolute;
+}
+
+.cartIcon > img {
+  width: 35%;
+  float: right;
+}
+
+.cartNum {
+  font-size: 20px;
+  font-weight: 600;
+  position: absolute;
+  right: 2.9%;
+  top: 5%;
+}
+
+.companyName {
+  position: absolute;
+  left: 38%;
+  top: 1px;
+  font-family: Futura;
+  font-weight: 500;
+  font-size: 48px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #362921;
+}
+
+/* Full page background: 
+ * https://www.w3schools.com/howto/howto_css_full_page.asp 
+ */
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.bg {
+  background-image: url("images/background.png");
+  height: 100%; 
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Menu overlay from 
+ * https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_overlay 
+ */
+#overlay {
+  height: 100%;
+  width: 25%;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: -25%;
+  background-color: #232E33;
+  overflow-x: hidden;
+  transition: 0.5s;
+  display: block;
+}
+
+.menu {
+  position: relative;
+  width: 100%;
+  margin-top: 30px;
+  left: 10%;
+}
+
+.menu a {
+  padding: 10px 0px;
+  text-decoration: none;
+  color: #FFFFFF;
+  display: block;
+  transition: 0.3s;
+  font-weight: 200;
+  font-size: 20px;
+}
+
+.menu a:hover, .menu a:focus {
+  color: #f1f1f1;
+}
+
+.menu a:hover + .line {
+  width: 75%;
+}
+
+.line, .sectionLine {
+  position: relative;
+  width: 0%;
+  border-top: 1px solid #FFFFFF;
+  padding-bottom: 50px;
+  transition: 0.5s;
+}
+
+/* Quiz intro, question 1 and question 2 styling */
+#quizIntro {
+  position: fixed;
+  top: 55%;
+  left: 38%;
+  width: 23%;
+  border: 3px solid #FFFFFF;
+  height: 5%;
+  background: #C4C4C466;
+}
+
+#quizArrow > img {
+  width: 13%;
+  float: right;
+}
+
+#quizArrow {
+  right: 10%;
+  top: 25%;
+  position: absolute;
+}
+
+#quizIntro > p {
+  position: absolute;
+  font-weight: 400;
+  font-size: 20px;
+  color: #FFFFFF;
+  left: 5%;
+  margin: 0;
+  top: 20%;
+}
+
+#quizQ1 {
+  display: none;
+  position: fixed;
+  top: 33%;
+  left: 35%;
+  width: 30%;
+  height: 35%;
+  background: rgba(255, 255, 255, 0.7);
+  border: 5px solid #FFFFFF;
+}
+
+#q1Question, #q2Question {
+  position: absolute;
+  font-weight: 400;
+  font-size: 20px;
+  color: #362921;
+  left: 5%;
+  margin: 0;
+  top: 10%;
+}
+
+#q1Dog {
+  position: absolute;
+  left: 5%;
+  top: 22%;
+}
+
+#q1Cat {
+  position: absolute;
+  left: 55%;
+  top: 22%;
+}
+
+#q1Dog > p, #q1Cat > p, #quizQ2Table p {
+  text-align: center;
+  margin: 0;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#q1SeeAll {
+  position: absolute;
+  text-decoration: underline;
+  left: 43%;
+  top: 85%;
+  color: #362921;
+}
+
+#quizQ2 {
+  display: none;
+  position: fixed;
+  top: 25%;
+  left: 35%;
+  width: 28%;
+  height: 60%;
+  background: rgba(255, 255, 255, 0.7);
+  border: 5px solid #FFFFFF;
+}
+
+#q2Question {
+  top: 3%;
+}
+
+#quizQ2Table {
+  position: absolute;
+  left: 2%;
+  top: 12%;
+  width: 90%;
+  height: 80%;
+}
+
+#quizQ2Table td {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+#q2SeeAll {
+  position: absolute;
+  text-decoration: underline;
+  left: 43%;
+  top: 87%;
+  color: #362921;
+}
+
+/* Filter options and selected filters on
+ * product browsing site */
+.filter {
+  position: relative;
+  width: 100%;
+  height: 8%;
+  left: 0;
+  top: 9%;
+}
+
+.filterOptions {
+  left: 5%;
+  position: absolute;
+  top: 40%;
+  height: 60%;
+  width: 8%;
+  border: 1px solid black;
+}
+
+.filterIcon {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+}
+
+.filterIcon > img {
+  width: 20%;
+}
+
+.filterOptions > p {
+  position: absolute;
+  left: 30%;
+  top: 20%;
+  margin: 0;
+  font-weight: normal;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.selectedFilters {
+  left: 17%;
+  position: absolute;
+  top: 40%;
+  height: 60%;
+  width: 80%;
+}
+
+.dogFilter {
+  position: absolute;
+  height: 100%;
+  width: 10%;
+  background: rgba(196, 196, 196, 0.5);
+  border-radius: 5px; 
+}
+
+.dogFilter > p {
+  position: absolute;
+  left: 10%;
+  top: 20%;
+  margin: 0;
+  font-weight: normal;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.dropDownIcon > img {
+  width: 50%;
+}
+
+.dropDownIcon {
+  position: absolute;
+  left: 70%;
+  top: 25%;
+}
+
+/* Hidden section menu for easy browsing */
+#sectionMenuSideBar {
+  position: fixed;
+  height: 100%;
+  width: 3%;
+  top: 9%;
+  z-index: 7;
+}
+
+#sectionMenuOverlay {
+  height: 100%;
+  width: 20%;
+  position: fixed;
+  z-index: 8;
+  top: 9%;
+  left: -25%;
+  background-color: rgba(243, 243, 243, 0.95);;
+  overflow-x: hidden;
+  transition: 0.5s;
+  display: block;
+}
+
+#sectionMenu {
+  position: relative;
+  width: 100%;
+  margin-top: 30px;
+  left: 10%;
+}
+
+#sectionMenu p {
+  padding: 10px 0px;
+  text-decoration: none;
+  color: black;
+  display: block;
+  transition: 0.3s;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+#sectionMenu p:hover, #sectionMenu p:focus {
+  color: black;
+  cursor: pointer;
+}
+
+#sectionMenu p:hover + .sectionLine {
+  width: 75%;
+}
+
+.sectionLine {
+  border-top: 1px solid black;
+  margin-bottom: 80px;
+}
+
+/* Styling for each product section */
+#backpacks, #harnesses, #attachments, #collars {
+  position: relative;
+  width: 100%;
+  height: 75%;
+  top: 10%;
+}
+
+#harnesses, #collars {
+  background: rgba(196, 196, 196, 0.2);
+}
+
+.browseSection > p {
+  position: absolute;
+  left: 3%;
+  top: 8%;
+  margin: 0;
+  font-weight: 600;
+  font-size: 30px;
+}
+
+#backpackOptions, #harnessOptions, #attachmentOptions, #collarOptions {
+  position: absolute;
+  left: 5%;
+  top: 20%;
+  display: flex;
+  flex-direction: row;
+  height: 70%;
+  width: 90%;
+  justify-content: space-between;
+}
+
+.browseOption > a > img {
+  height: 90%;
+}
+
+.browseOption {
+  position: relative;
+}
+
+.browseItemTitle {
+  position: absolute;
+  font-weight: normal;
+  font-size: 18px;
+  margin: 0;
+  width: 80%;
+
+}
+
+.browseItemPrice {
+  position: absolute;
+  right: 0%;
+  font-weight: bold;
+  font-size: 20px;
+  margin: 0;
+}
+
+/* Image styling for product detail page */
+#mainProductImg {
+  position: absolute;
+  width: 40%;
+  left: 10%;
+  top: 20%;
+}
+
+#imgRow {
+  position: absolute;
+  left: 10%;
+  top: 73%;
+  width: 40%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  height: 10%;
+}
+
+#imgRow > a {
+  width: 15%;
+  overflow: hidden;
+  margin: 1%;
+}
+
+#imgRow > a > img {
+  width: 100%;
+}
+
+#productImg2, #productImg3, #productImg4 {
+  opacity: 20%;
+}
+
+/* Important product details styling */
+#productName {
+  position: absolute;
+  left: 55%;
+  top: 17%;
+  font-weight: 600;
+  font-size: 30px;
+}
+
+#productPrice {
+  position: absolute;
+  left: 90%;
+  top: 17%;
+  font-weight: 400;
+  font-size: 30px;
+}
+
+#productDescription {
+  position: absolute;
+  left: 55%;
+  top: 25%;
+  font-weight: 300;
+  font-size: 18px;
+  width: 39%;
+}
+
+/* Size selection */
+#productSize {
+  position: absolute;
+  left: 55%;
+  top: 37%;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+#sizeSelection{
+  position: absolute;
+  left: 63%;
+  top: 37%;
+  width: 30%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 10%;
+}
+
+#small, #medium, #large {
+  opacity: 20%;
+}
+
+#tiny > a > img {
+  height: 50%;
+  bottom: 0%;
+  position: relative;
+}
+
+#tiny > p {
+  bottom: 0%;
+  position: relative;
+}
+
+#small > a > img {
+  height: 65%;
+  bottom: 10%;
+  position: relative;
+}
+
+#small > p {
+  bottom: 15%;
+  position: relative;
+}
+
+#medium > a > img {
+  height: 80%;
+  bottom: 20%;
+  position: relative;
+}
+
+#medium > p {
+  bottom: 30%;
+  position: relative;
+}
+
+#large > a > img {
+  height: 95%;
+  bottom: 30%;
+  position: relative;
+}
+
+#large > p {
+  bottom: 45%;
+  position: relative;
+}
+
+.sizeOption > p {
+  margin: 0;
+  text-align: center;
+  font-weight: 300;
+  font-size: 18px;
+}
+
+/* Color selection */
+#productColor {
+  position: absolute;
+  left: 55%;
+  top: 50%;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+#colorSelection{
+  position: absolute;
+  left: 61%;
+  top: 50%;
+  width: 33%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 10%;
+}
+
+.colorOption > p {
+  margin: 0;
+  text-align: center;
+  font-weight: 300;
+  font-size: 18px;
+}
+
+.colorOption > div {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  margin-left: 25%;
+}
+
+#strawberryCircle {
+  background-color: #ff295c;
+}
+
+#blackberryCircle {
+  background-color: #3A0958;
+}
+
+#crazyberryCircle {
+  background-color: #e529ff;
+}
+
+#fireorangeCircle {
+  background-color: #ff9207;
+}
+
+#strawberry, #crazyberry, #fireorange {
+  opacity: 20%;
+}
+
+/* Low stock indicator */
+#lowStock > p{
+  position: absolute;
+  left: 58%;
+  top: 59%;
+  font-weight: 400;
+  font-size: 18px;
+  color: #B84A4A;
+  text-transform: uppercase;
+}
+
+#lowStock > img {
+  position: absolute;
+  left: 55%;
+  top: 61%;
+  width: 2%;
+}
+
+/* Adjust quantity and add to cart */
+#quantity {
+  border: 1px solid black;
+  left: 60%;
+  top: 67%;
+  height: 5%;
+  position: absolute;
+  width: 8%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#quantity > a {
+  margin: 7%;
+}
+
+#quantity > p {
+  margin: 5px 0px 0px 0px;
+  font-weight: normal;
+  font-size: 24px;
+}
+
+#addToCart {
+  left: 70%;
+  top: 67%;
+  height: 5%;
+  position: absolute;
+  width: 18%;
+  background-color: black;
+}
+
+#addToCart {
+  cursor: pointer;
+}
+
+#addToCart > p {
+  margin: 5px 0px 0px 0px;
+  font-weight: 200;
+  font-size: 24px;
+  color: #FFFFFF;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* Item details section */
+#detailsHeader {
+  position: absolute;
+  left: 10%;
+  top: 85%;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+#detailsDescription {
+  position: absolute;
+  left: 10%;
+  top: 90%;
+  font-weight: 200;
+  font-size: 18px;
+  width: 42%;
+}
+
+#detailsList {
+  position: absolute;
+  left: 11%;
+  top: 105%;
+  font-weight: 200;
+  font-size: 18px;
+  width: 42%;
+  padding-bottom: 8%;
+}
+
+/* Customer reviews section */
+#customerReviews {
+  position: absolute;
+  left: 56%;
+  top: 87%;
+  height: 50%;
+  width: 40%;
+  border-left: 1px solid black;
+  padding-left: 25px;
+}
+
+#reviewsHeader {
+  font-weight: 500;
+  font-size: 20px;
+  margin: 0;
+}
+
+#ratings {
+  position: absolute;
+  left: 60%;
+  top: 0%;
+}
+
+#reviewCustomerName, #reviewContent {
+  font-weight: 300;
+  font-size: 18px;
+}
+
+#review {
+  position: absolute;
+  left: 8%;
+  top: 6%;
+}
+
+#moreReviews {
+  position: absolute;
+  left: 8%;
+  top: 70%;
+  text-decoration: underline;
+  font-size: 15px;
+  color: #999999;
+}
+
+#cart {
+  background-color: #F1F1F1;
+}
+
+#cartTitle {
+  position: relative;
+  padding-left: 9%;
+  top: 25%;
+  font-weight: 600;
+  font-size: 36px;
+  margin: 0;
+}
+
+#cartItems {
+  position: relative;
+  left: 10%;
+  top: 30%;
+  border-bottom: 1px;
+  border-bottom-style: solid;
+  width: 55%;
+  height: 30%;
+}
+
+.cartItemImage {
+  width: 30%;
+  position: absolute;
+}
+
+.cartItemTitle {
+  position: absolute;
+  left: 32%;
+  font-weight: 500;
+  font-size: 18px;
+  margin: 0;
+}
+
+.cartItemColor {
+  position: absolute;
+  left: 32%;
+  top: 15%;
+  font-weight: 300;
+}
+
+.cartItemSize {
+  position: absolute;
+  left: 32%;
+  top: 25%;
+  font-weight: 300;
+}
+
+.cartItemPrice {
+  position: absolute;
+  right: 5%;
+  font-weight: 500;
+  font-size: 18px;
+  margin: 0;
+}
+
+#orderSummary {
+  position: absolute;
+  left: 70%;
+  top: 30%;
+  width: 25%;
+  height: 50%;
+  background-color: white;
+}
+
+#orderSummaryTitle {
+  text-align: center;
+  font-weight: 400;
+  font-size: 30px;
+}
+
+.priceCategory {
+  width: 70%;
+  left: 15%;
+  right: 15%;
+  height: 7%;
+  border-bottom: 1px rgba(0, 0, 0, 0.3);
+  border-bottom-style: solid;
+}
+
+.categoryTitle {
+  position: absolute;
+  left: 0%;
+  margin: 0;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.categoryPrice {
+  position: absolute;
+  right: 0;
+  margin: 0;
+}
+
+#subtotal {
+  top: 25%;
+  position: absolute;
+}
+
+#taxes {
+  top: 40%;
+  position: absolute;
+}
+
+#shipping {
+  top: 55%;
+  position: absolute;
+}
+
+#total {
+  top: 75%;
+  position: absolute;
+  border: none;
+}
+
+#checkout {
+  position: absolute;
+  top: 85%;
+  height: 10%;
+  left: 10%;
+  right: 10%;
+  width: 80%;
+  background-color: black;
+}
+
+#checkout p {
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+  margin: 0;
+  margin-top: 9px;
+}

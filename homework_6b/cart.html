@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js"></script>
+    <title>Muddy Paws</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600' 
+    rel='stylesheet'>
+		<link rel="icon" href="images/pawIcon.png">
+  </head>
+  <body id="cart">
+    <!-- top header -->
+    <header>
+      <a href="#" onmouseover="showMenu()" class="menuIcon" 
+      aria-label="mousing over this icon will cause a left side menu to show up">
+      <img src="images/menuIcon.png" alt="hamburger menu icon"></a>
+      <a class="companyName" href="index.html">Muddy Paws</a>
+      <a class="cartIcon" href="cart.html"><img src="images/cartIcon.png" alt="shopping cart icon"></a> 
+      <div class="cartNum"></div>
+    </header>
+
+    <!-- hidden menu -->
+    <div onmouseover="showMenu()" onmouseout="hideMenu()" id="overlay" 
+    aria-label="mousing over the menu will cause it to stay open, 
+    but mousing out will cause the menu to close">
+      <div class="menu">
+        <a href="#" aria-label="click to reach the about us page">About Us</a>
+        <div class="line"></div>
+        <a href="browse.html" aria-label="click to reach the dogs products page">Dogs</a>
+        <div class="line"></div>
+        <a href="browse.html" aria-label="click to reach the cats products page">Cats</a>
+        <div class="line"></div>
+        <a href="browse.html" aria-label="click to reach the all gear page">All Gear</a>
+        <div class="line"></div>
+        <a href="#" aria-label="click to reach the contact us page">Contact Us</a>
+        <div class="line"></div>
+      </div>
+    </div>
+
+    <!-- cart items -->
+    <div id="cartTitle">Shopping Cart</div>
+    <div id="cartItems">
+      <div id="cartItem1">
+        <img class="cartItemImage" src="images/furdinandBackpack1.png" alt="image of furdinand backpack">
+        <p class="cartItemTitle">Furdinand Backpack</p>
+        <p class="cartItemSize">Size: Medium</p>
+        <p class="cartItemColor">Color: Blackberry</p>
+        <p class="cartItemPrice">$95</p>
+      </div>
+    </div>
+
+    <!-- order summary -->
+    <div id="orderSummary">
+      <p id="orderSummaryTitle">Order Summary</p>
+      <div id="subtotal" class="priceCategory">
+        <p class="categoryTitle">Subtotal</p>
+        <p class="categoryPrice">$95</p>
+      </div>
+      <div id="taxes" class="priceCategory">
+        <p class="categoryTitle">Estimated Taxes</p>
+        <p class="categoryPrice">$10.12</p>
+      </div>
+      <div id="shipping" class="priceCategory">
+        <p class="categoryTitle">Shipping</p>
+        <p class="categoryPrice">$5.99</p>
+      </div>
+      <div id="total" class="priceCategory">
+        <p class="categoryTitle">Total</p>
+        <p class="categoryPrice">$108.11</p>
+      </div>
+      <div id="checkout">
+        <p>Checkout</p>
+      </div>
+    </div>
+
+  </body>
+</html>
