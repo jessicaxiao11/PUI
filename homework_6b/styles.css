@@ -797,6 +797,13 @@ body, html {
   font-weight: 300;
 }
 
+.cartItemQuantity {
+  position: absolute;
+  left: 32%;
+  top: 35%;
+  font-weight: 300;
+}
+
 .cartItemPrice {
   position: absolute;
   right: 5%;
