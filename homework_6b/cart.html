@@ -44,12 +44,20 @@
     <div id="cartTitle">Shopping Cart</div>
     <div id="cartItems">
       <!-- <div id="cartItem1">
-        <img class="cartItemImage" src="images/furdinandBackpack1.png" alt="image of furdinand backpack">
+        <img class="cartItemImage" src="images/furdinandBackpackBlackberry.png" alt="image of furdinand backpack">
+        <p class="cartItemTitle">Furdinand Backpack</p>
+        <p class="cartItemSize">Size: Medium</p>
+        <p class="cartItemColor">Color: Blackberry</p>
+        <p class="cartItemPrice">$95</p>
+      </div>
+      <div id="cartItem2">
+        <img class="cartItemImage" src="images/furdinandBackpackCrazyberry.png" alt="image of furdinand backpack">
         <p class="cartItemTitle">Furdinand Backpack</p>
         <p class="cartItemSize">Size: Medium</p>
         <p class="cartItemColor">Color: Blackberry</p>
         <p class="cartItemPrice">$95</p>
       </div> -->
+      <div id="cartLine"></div>
     </div>
 
     <!-- order summary -->
@@ -57,11 +65,11 @@
       <p id="orderSummaryTitle">Order Summary</p>
       <div id="subtotal" class="priceCategory">
         <p class="categoryTitle">Subtotal</p>
-        <p class="categoryPrice">$95</p>
+        <p id="subtotalPrice" class="categoryPrice">$95</p>
       </div>
       <div id="taxes" class="priceCategory">
         <p class="categoryTitle">Estimated Taxes</p>
-        <p class="categoryPrice">$10.12</p>
+        <p id="taxesPrice" class="categoryPrice">$10.12</p>
       </div>
       <div id="shipping" class="priceCategory">
         <p class="categoryTitle">Shipping</p>
@@ -69,12 +77,14 @@
       </div>
       <div id="total" class="priceCategory">
         <p class="categoryTitle">Total</p>
-        <p class="categoryPrice">$108.11</p>
+        <p id="totalPrice" class="categoryPrice">$108.11</p>
       </div>
       <div id="checkout">
         <p>Checkout</p>
       </div>
     </div>
+
+    <div id="footer"></div>
 
   </body>
 </html>

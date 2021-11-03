@@ -49,9 +49,8 @@ function Product(productSize, productColor) {
   this.name = "Furdinand Backpack";
   this.size = productSize;
   this.color = productColor;
-  this.quanity = 1;
+  this.quantity = 1;
   this.price = "$95";
-  this.increment = function() { this.size++; };
 }
 
 // Add item to cart in model
@@ -69,7 +68,8 @@ function addToCart() {
   for (var i = 0; i < cart.length; i++) {
     var item = cart[i];
     if (item.size === selectedSize && item.color === selectedColor) {
-      item.increment();
+      item.quantity += 1;
+      cart[i] = item;
       itemExists = true;
     }
   }
@@ -77,8 +77,9 @@ function addToCart() {
   if (!itemExists) {
     var newItem = new Product(selectedSize, selectedColor);
     cart.push(newItem);
-    sessionStorage.setItem('cart', JSON.stringify(cart));
   }
+
+  sessionStorage.setItem('cart', JSON.stringify(cart));
 
   // Update view
   updateCartNum();
@@ -108,15 +109,22 @@ function displayCart() {
   if (cart === null) {
     cart = [];
   }
+  var totalItems = 0;
   for (var i = 0; i < cart.length; i++) {
     // create new item
     const item = document.createElement("div");
+    item.style.backgroundColor = "blue";
+    const topOffset = 50 + i*200;
+    item.style.top = String(topOffset) + "px";
+    item.style.position = "absolute";
+    cartItems.style.height = String(topOffset + 200) + "px";
+    document.getElementById("cartLine").style.height = String(topOffset + 200) + "px";
     cartItems.appendChild(item);
 
     // create img of item
     const img = document.createElement("img");
     img.className = "cartItemImage";
-    img.src = "images/furdinandBackpack1.png";
+    img.src = "images/furdinandBackpack" + capitalize(cart[i].color) + ".png";
     img.alt = "image of furdinand backpack";
     item.appendChild(img);
 
@@ -128,12 +136,16 @@ function displayCart() {
 
     const size = document.createElement("p");
     size.className = "cartItemSize";
-    size.innerHTML = "Size: " + cart[i].size;
+    size.innerHTML = "Size: " + capitalize(cart[i].size);
     item.appendChild(size);
 
     const color = document.createElement("p");
     color.className = "cartItemColor";
-    color.innerHTML = "Color: " + cart[i].color;
+    if (cart[i].color === "fireorange") {
+      color.innerHTML = "Color: Fire Orange";
+    } else {
+      color.innerHTML = "Color: " + capitalize(cart[i].color);
+    }
     item.appendChild(color);
 
     const price = document.createElement("p");
@@ -145,7 +157,17 @@ function displayCart() {
     quantity.className = "cartItemQuantity";
     quantity.innerHTML = cart[i].quantity;
     item.appendChild(quantity);
+    totalItems += cart[i].quantity;
   }
+
+  // Update pricing
+  var subtotal = 95 * totalItems;
+  var taxes = Math.round(subtotal * 0.11).toFixed(2);
+  var total = subtotal + Number(taxes) + 5.99;
+
+  document.getElementById("subtotalPrice").innerHTML = "$" + subtotal;
+  document.getElementById("taxesPrice").innerHTML = "$" + taxes;
+  document.getElementById("totalPrice").innerHTML = "$" + total;
 }
 
 // Display correct items in cart when window first loads
@@ -171,17 +193,21 @@ function selectSize(id) {
   }
 }
 
+function capitalize(color) {
+  return color.charAt(0).toUpperCase() + color.slice(1);
+}
+
 /* Select color in product detail page, by greying out un-selected items
  * Color selection also determines whether the item is in low stock, and which 
  * product image is displayed */
 function selectColor(id) {
-  var sizes = ['strawberry', 'blackberry', 'crazyberry', 'fireorange'];
+  var colors = ['strawberry', 'blackberry', 'crazyberry', 'fireorange'];
   selectedColor = id;
   document.getElementById(id).style.opacity = "100%";
   // grey out unselected items
-  for (var i = 0; i < sizes.length; i++) {
-    if (sizes[i] !== selectedColor) {
-      document.getElementById(sizes[i]).style.opacity = "20%";
+  for (var i = 0; i < colors.length; i++) {
+    if (colors[i] !== selectedColor) {
+      document.getElementById(colors[i]).style.opacity = "20%";
     }
   }
 
@@ -192,24 +218,12 @@ function selectColor(id) {
     document.getElementById("lowStock").style.visibility = "visible";
   }
 
-  // show correct product image that corresponds with the selected color
-  var color = null;
-  if (id == "blackberry") {
-    color = 1;
-  } else if (id == "strawberry") {
-    color = 2 ;
-  } else if (id == "crazyberry") {
-    color = 3 ;
-  } else {
-    color = 4 ;
-  }
-
-  document.getElementById("mainProductImg").src = "images/furdinandBackpack" + color.toString() + ".png";
-  for (var i = 1; i < 5; i++) {
-    if (i == color) {
-      document.getElementById("productImg" + i.toString()).style.opacity = "100%";
+  document.getElementById("mainProductImg").src = "images/furdinandBackpack" + capitalize(id) + ".png";
+  for (var i = 0; i < colors.length; i++) {
+    if (colors[i] == id) {
+      document.getElementById("productImg" + capitalize(colors[i])).style.opacity = "100%";
     } else {
-      document.getElementById("productImg" + i.toString()).style.opacity = "20%";
+      document.getElementById("productImg" + capitalize(colors[i])).style.opacity = "20%";
     }
   }
 }
