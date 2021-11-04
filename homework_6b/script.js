@@ -306,10 +306,12 @@ function removeItem() {
   // find item, remove completely
   var cart = JSON.parse(sessionStorage.getItem('cart'));
   var itemIndex = -1;
+  var quantity = -1;
   for (var i = 0; i < cart.length; i++) {
     var item = cart[i];
     if (item.size === size && item.color === color) {
       itemIndex = i;
+      quantity = item.quantity;
     }
   }
   
@@ -321,5 +323,5 @@ function removeItem() {
   displayCart();
 
   // Change number in cart
-  updateCartNum(-1);
+  updateCartNum(-quantity);
 }
