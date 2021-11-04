@@ -51,16 +51,17 @@ function Product(productSize, productColor) {
   this.quantity = 1;
 }
 
-// Add item to cart in model
+// Add item to cart (model)
 function addToCart() {
-  // Change number in cart
+  // Change cart number
   updateCartNum(1);
 
-  // Add item to cart array
+  // Add item to cart
   var cart = JSON.parse(sessionStorage.getItem('cart'));
   if (cart === null) {
     cart = [];
   }
+  // If the same item already exists in the cart, we just increase its quantity
   var itemExists = false;
   for (var i = 0; i < cart.length; i++) {
     var item = cart[i];
@@ -70,17 +71,15 @@ function addToCart() {
       itemExists = true;
     }
   }
-
   if (!itemExists) {
     var newItem = new Product(selectedSize, selectedColor);
     cart.push(newItem);
   }
-
   sessionStorage.setItem('cart', JSON.stringify(cart));
 }
 
+// Increase number of items in cart by delta (model)
 function updateCartNum(delta) {
-  // Increase number in cart
   var numInCart = sessionStorage.getItem('numInCart');
   sessionStorage.setItem('numInCart', parseInt(numInCart)+delta);
 
@@ -102,7 +101,7 @@ function updateCartNumView() {
   }
 }
 
-// Display cart items
+// Display cart items (view)
 function displayCart() {
   // remove all existing children to redraw
   var cartItems = document.getElementById("cartItems");
@@ -110,14 +109,16 @@ function displayCart() {
     cartItems.removeChild(cartItems.lastChild);
   }
 
-  // display all children
+  // display all cart items
   var cart = JSON.parse(sessionStorage.getItem('cart'));
   if (cart === null) {
     cart = [];
   }
-  const template = document.getElementById('cart-item-template');
   document.getElementById("cartLine").style.height = "50px";
   var totalItems = 0;
+  
+  // add each cart item based on template
+  const template = document.getElementById('cart-item-template');
   for (var i = 0; i < cart.length; i++) {
     // create new item
     const item = template.content.firstElementChild.cloneNode(true);
@@ -160,7 +161,7 @@ function displayCart() {
     remove.addEventListener('click', removeItem);
   }
 
-  // Update pricing
+  // Update pricing in order summary
   var subtotal = 95 * totalItems;
   var taxes = Math.round(subtotal * 0.11).toFixed(2);
   var total = subtotal + Number(taxes) + 5.99;
@@ -170,7 +171,7 @@ function displayCart() {
   document.getElementById("totalPrice").innerHTML = "$" + total;
 }
 
-// Display correct items in cart when window first loads
+// Call view functions when window loads
 window.onload = function(){ 
   updateCartNumView(); 
   if (window.location.href.indexOf('cart.html') > -1) {
@@ -178,6 +179,7 @@ window.onload = function(){
   }
 }
 
+// Default selected sizes + color
 var selectedSize = 'tiny';
 var selectedColor = 'blackberry';
 
@@ -193,8 +195,9 @@ function selectSize(id) {
   }
 }
 
-function capitalize(color) {
-  return color.charAt(0).toUpperCase() + color.slice(1);
+// Capitalize a word, for formatting purposes
+function capitalize(word) {
+  return word.charAt(0).toUpperCase() + word.slice(1);
 }
 
 /* Select color in product detail page, by greying out un-selected items
@@ -218,7 +221,9 @@ function selectColor(id) {
     document.getElementById("lowStock").style.visibility = "visible";
   }
 
-  document.getElementById("mainProductImg").src = "images/furdinandBackpack" + capitalize(id) + ".png";
+  // grey out images that don't correspond to the selected color of the backpack
+  document.getElementById("mainProductImg").src = 
+    "images/furdinandBackpack" + capitalize(id) + ".png";
   for (var i = 0; i < colors.length; i++) {
     if (colors[i] == id) {
       document.getElementById("productImg" + capitalize(colors[i])).style.opacity = "100%";
@@ -228,7 +233,8 @@ function selectColor(id) {
   }
 }
 
-// decrement item quantity in cart
+
+// decrement item quantity in cart (model)
 function decrementQuantity() {
   const quantityElem = this;
   const itemID = quantityElem.parentElement.id;
@@ -253,6 +259,7 @@ function decrementQuantity() {
     }
   }
 
+  // quantity has reached zero, so delete item completely
   if (remove) {
     cart.splice(itemIndex, 1);
   }
