@@ -26,3 +26,15 @@ New key interactions:
 </ul>
 
 The low-fidelity and high-fidelity versions of the shopping cart page can be found in low-fi.pdf and hi-fi.pdf.
+
+## Homework 6B
+
+New key interactions:
+
+<ul>
+<li>Adding to cart from the product detail page of the Furdinand Backpack will add the item with the correct color and sizing to cart. Items of the same type in the cart are aggregated together by increasing the quantity of that item.</li>
+<li>On the shopping cart page, users can choose to change (increment and decrement) the quantity of an item.</li>
+<li>Users can also choose to remove an entire item altogether.</li>
+</ul>
+
+The reflection and programming concepts portion can be found in Writeup.pdf.
