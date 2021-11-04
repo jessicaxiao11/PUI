@@ -53,9 +53,8 @@ function Product(productSize, productColor) {
 
 // Add item to cart in model
 function addToCart() {
-  // Increase number in cart
-  var numInCart = sessionStorage.getItem('numInCart');
-  sessionStorage.setItem('numInCart', parseInt(numInCart)+1);
+  // Change number in cart
+  updateCartNum(1);
 
   // Add item to cart array
   var cart = JSON.parse(sessionStorage.getItem('cart'));
@@ -78,13 +77,19 @@ function addToCart() {
   }
 
   sessionStorage.setItem('cart', JSON.stringify(cart));
+}
+
+function updateCartNum(delta) {
+  // Increase number in cart
+  var numInCart = sessionStorage.getItem('numInCart');
+  sessionStorage.setItem('numInCart', parseInt(numInCart)+delta);
 
   // Update view
-  updateCartNum();
+  updateCartNumView();
 }
 
 // Update view of cart number
-function updateCartNum() {
+function updateCartNumView() {
   var numInCart = sessionStorage.getItem('numInCart');
   if (numInCart === null) {
     sessionStorage.setItem('numInCart', 0);
@@ -101,9 +106,9 @@ function updateCartNum() {
 function displayCart() {
   // remove all existing children to redraw
   var cartItems = document.getElementById("cartItems");
-  // while (cartItems.firstChild) {
-  //   cartItems.remove(cartItems.firstChild);
-  // }
+  while (cartItems.childElementCount > 2) {
+    cartItems.removeChild(cartItems.lastChild);
+  }
 
   // display all children
   var cart = JSON.parse(sessionStorage.getItem('cart'));
@@ -111,6 +116,7 @@ function displayCart() {
     cart = [];
   }
   const template = document.getElementById('cart-item-template');
+  document.getElementById("cartLine").style.height = "50px";
   var totalItems = 0;
   for (var i = 0; i < cart.length; i++) {
     // create new item
@@ -119,7 +125,6 @@ function displayCart() {
 
     // set position of item on page
     const topOffset = 50 + i*200;
-    console.log(item);
     item.style.top = String(topOffset) + "px";
     item.style.position = "absolute";
     cartItems.style.height = String(topOffset + 200) + "px";
@@ -143,6 +148,16 @@ function displayCart() {
     const quantity = item.querySelector('.cartItemQuantity');
     quantity.innerHTML = cart[i].quantity;
     totalItems += cart[i].quantity;
+
+    // add functionality to decrement, increment and remove
+    const decrement = item.querySelector('.cartItemDecrement');
+    decrement.addEventListener('click', decrementQuantity);
+
+    const increment = item.querySelector('.cartItemIncrement');
+    increment.addEventListener('click', incrementQuantity);
+
+    const remove = item.querySelector('.cartItemRemove');
+    remove.addEventListener('click', removeItem);
   }
 
   // Update pricing
@@ -157,7 +172,7 @@ function displayCart() {
 
 // Display correct items in cart when window first loads
 window.onload = function(){ 
-  updateCartNum(); 
+  updateCartNumView(); 
   if (window.location.href.indexOf('cart.html') > -1) {
     displayCart();
   }
@@ -247,6 +262,9 @@ function decrementQuantity() {
   // re-draw cart
   displayCart();
 
+  // Change number in cart
+  updateCartNum(-1);
+
 }
 
 // increase item quantity in cart
@@ -271,6 +289,9 @@ function incrementQuantity() {
 
   // re-draw cart
   displayCart();
+
+  // Change number in cart
+  updateCartNum(1);
 
 }
 
@@ -298,4 +319,7 @@ function removeItem() {
 
   // re-draw cart
   displayCart();
+
+  // Change number in cart
+  updateCartNum(-1);
 }
