@@ -46,11 +46,9 @@ function scrollToElement(id) {
 
 // Object for product added to cart
 function Product(productSize, productColor) {
-  this.name = "Furdinand Backpack";
   this.size = productSize;
   this.color = productColor;
   this.quantity = 1;
-  this.price = "$95";
 }
 
 // Add item to cart in model
@@ -101,62 +99,49 @@ function updateCartNum() {
 
 // Display cart items
 function displayCart() {
-  // remove all children
+  // remove all existing children to redraw
   var cartItems = document.getElementById("cartItems");
+  // while (cartItems.firstChild) {
+  //   cartItems.remove(cartItems.firstChild);
+  // }
 
   // display all children
   var cart = JSON.parse(sessionStorage.getItem('cart'));
   if (cart === null) {
     cart = [];
   }
+  const template = document.getElementById('cart-item-template');
   var totalItems = 0;
   for (var i = 0; i < cart.length; i++) {
     // create new item
-    const item = document.createElement("div");
-    item.style.backgroundColor = "blue";
+    const item = template.content.firstElementChild.cloneNode(true);
+    item.id = cart[i].size + "_" + cart[i].color;
+
+    // set position of item on page
     const topOffset = 50 + i*200;
+    console.log(item);
     item.style.top = String(topOffset) + "px";
     item.style.position = "absolute";
     cartItems.style.height = String(topOffset + 200) + "px";
     document.getElementById("cartLine").style.height = String(topOffset + 200) + "px";
     cartItems.appendChild(item);
 
-    // create img of item
-    const img = document.createElement("img");
-    img.className = "cartItemImage";
+    // update img, size, color, quantity
+    const img = item.querySelector('.cartItemImage');
     img.src = "images/furdinandBackpack" + capitalize(cart[i].color) + ".png";
-    img.alt = "image of furdinand backpack";
-    item.appendChild(img);
 
-    // create title, size, color, price, quantity
-    const title = document.createElement("p");
-    title.className = "cartItemTitle";
-    title.innerHTML = "Furdinand Backpack";
-    item.appendChild(title);
-
-    const size = document.createElement("p");
-    size.className = "cartItemSize";
+    const size = item.querySelector('.cartItemSize');
     size.innerHTML = "Size: " + capitalize(cart[i].size);
-    item.appendChild(size);
 
-    const color = document.createElement("p");
-    color.className = "cartItemColor";
+    const color = item.querySelector('.cartItemColor');
     if (cart[i].color === "fireorange") {
       color.innerHTML = "Color: Fire Orange";
     } else {
       color.innerHTML = "Color: " + capitalize(cart[i].color);
     }
-    item.appendChild(color);
 
-    const price = document.createElement("p");
-    price.className = "cartItemPrice";
-    price.innerHTML = cart[i].price;
-    item.appendChild(price);
-
-    const quantity = document.createElement("p");
-    quantity.className = "cartItemQuantity";
+    const quantity = item.querySelector('.cartItemQuantity');
     quantity.innerHTML = cart[i].quantity;
-    item.appendChild(quantity);
     totalItems += cart[i].quantity;
   }
 
@@ -226,4 +211,91 @@ function selectColor(id) {
       document.getElementById("productImg" + capitalize(colors[i])).style.opacity = "20%";
     }
   }
+}
+
+// decrement item quantity in cart
+function decrementQuantity() {
+  const quantityElem = this;
+  const itemID = quantityElem.parentElement.id;
+  const splitID = itemID.split("_");
+  const size = splitID[0];
+  const color = splitID[1];
+
+  // find item, decrement quantity and/or remove completely
+  var cart = JSON.parse(sessionStorage.getItem('cart'));
+  var itemIndex = -1;
+  var remove = false;
+  for (var i = 0; i < cart.length; i++) {
+    var item = cart[i];
+    if (item.size === size && item.color === color) {
+      item.quantity--;
+      if (item.quantity === 0) {
+        remove = true;
+        itemIndex = i;
+      } else {
+        cart[i] = item;
+      }
+    }
+  }
+
+  if (remove) {
+    cart.splice(itemIndex, 1);
+  }
+
+  sessionStorage.setItem('cart', JSON.stringify(cart));
+
+  // re-draw cart
+  displayCart();
+
+}
+
+// increase item quantity in cart
+function incrementQuantity() {
+  const quantityElem = this;
+  const itemID = quantityElem.parentElement.id;
+  const splitID = itemID.split("_");
+  const size = splitID[0];
+  const color = splitID[1];
+
+  // find item, increment quantity
+  var cart = JSON.parse(sessionStorage.getItem('cart'));
+  for (var i = 0; i < cart.length; i++) {
+    var item = cart[i];
+    if (item.size === size && item.color === color) {
+      item.quantity++;
+      cart[i] = item;
+    }
+  }
+
+  sessionStorage.setItem('cart', JSON.stringify(cart));
+
+  // re-draw cart
+  displayCart();
+
+}
+
+// remove item completely from cart
+function removeItem() {
+  const quantityElem = this;
+  const itemID = quantityElem.parentElement.id;
+  const splitID = itemID.split("_");
+  const size = splitID[0];
+  const color = splitID[1];
+
+  // find item, remove completely
+  var cart = JSON.parse(sessionStorage.getItem('cart'));
+  var itemIndex = -1;
+  for (var i = 0; i < cart.length; i++) {
+    var item = cart[i];
+    if (item.size === size && item.color === color) {
+      itemIndex = i;
+    }
+  }
+  
+  cart.splice(itemIndex, 1);
+
+  sessionStorage.setItem('cart', JSON.stringify(cart));
+
+  // re-draw cart
+  displayCart();
 }

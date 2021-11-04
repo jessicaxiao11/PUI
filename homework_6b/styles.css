@@ -806,11 +806,43 @@ body, html {
   font-weight: 300;
 }
 
-.cartItemQuantity {
+.cartItemDecrement {
   position: absolute;
   left: 250px;
-  top: 90px;
+  top: 100px;
   font-weight: 300;
+  font-size: 40px;
+  margin: 0;
+}
+
+.cartItemQuantity {
+  position: absolute;
+  left: 285px;
+  top: 100px;
+  font-weight: 300;
+  font-size: 20px;
+  margin: 15px 0px 0px 0px;
+  border-left: 1px solid rgb(194, 194, 194);
+  border-right: 1px solid rgb(194, 194, 194);
+  padding: 0px 15px;
+}
+
+.cartItemIncrement {
+  position: absolute;
+  left: 335px;
+  top: 102px;
+  font-weight: 300;
+  font-size: 40px;
+  margin: 0;
+}
+
+.cartItemRemove {
+  position: absolute;
+  left: -30px;
+  top: -30px;
+  font-weight: 300;
+  color: #8b8a8aa4;
+  font-size: 25px;
 }
 
 .cartItemPrice {
